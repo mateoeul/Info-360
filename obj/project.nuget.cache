@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "s316klRd9NvAS1luB2XZ16kCnCzmqUGIDarretImkCYzYiMKtSIN1KldAD61sDDGsZ/ya2XMP+Gi9dLomsqz7w==",
+  "dgSpecHash": "7D0fVAqReI6xji/9/9v5jiIvI1ffVYVWd8jv/4DOUaidWzmfjvgQApqyj0xePlig5vNfmUiQ/JFJ7MZCf5tIaA==",
   "success": true,
   "projectFilePath": "/Users/cococartera/Uni./Uni..csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/cococartera/.nuget/packages/dapper/2.1.35/dapper.2.1.35.nupkg.sha512",
+    "/Users/cococartera/.nuget/packages/microsoft.netcore.platforms/3.1.0/microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "/Users/cococartera/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "/Users/cococartera/.nuget/packages/runtime.native.system.data.sqlclient.sni/4.7.0/runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
+    "/Users/cococartera/.nuget/packages/runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "/Users/cococartera/.nuget/packages/runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "/Users/cococartera/.nuget/packages/runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "/Users/cococartera/.nuget/packages/system.data.sqlclient/4.8.6/system.data.sqlclient.4.8.6.nupkg.sha512",
+    "/Users/cococartera/.nuget/packages/system.security.accesscontrol/4.7.0/system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "/Users/cococartera/.nuget/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
