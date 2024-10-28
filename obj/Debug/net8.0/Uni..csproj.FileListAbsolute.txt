@@ -1,0 +1,9 @@
+C:\Users\48111117\Info-360\obj\Debug\net8.0\Uni..csproj.AssemblyReference.cache
+C:\Users\48111117\Info-360\obj\Debug\net8.0\Uni..GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\48111117\Info-360\obj\Debug\net8.0\Uni..AssemblyInfoInputs.cache
+C:\Users\48111117\Info-360\obj\Debug\net8.0\Uni..AssemblyInfo.cs
+C:\Users\48111117\Info-360\obj\Debug\net8.0\Uni..csproj.CoreCompileInputs.cache
+C:\Users\48111117\Info-360\obj\Debug\net8.0\Uni..MvcApplicationPartsAssemblyInfo.cache
+C:\Users\48111117\Info-360\obj\Debug\net8.0\Uni..RazorAssemblyInfo.cache
+C:\Users\48111117\Info-360\obj\Debug\net8.0\Uni..RazorAssemblyInfo.cs
+C:\Users\48111117\Info-360\obj\Debug\net8.0\Uni..sourcelink.json

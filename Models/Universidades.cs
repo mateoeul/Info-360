@@ -7,5 +7,5 @@ public class Universidades
     public string? Ubicación{ get; set; }
     public char Tipo { get; set; }
     public string? Mail{ get; set; }
-    public string? Bio{ get; set; }
+    public string? Descripcion{ get; set; }
 }

@@ -1,4 +1,4 @@
-public class Carrera
+public class Carreras
 {
     public int Id { get; set; }
     public int IdUniversidad { get; set; }
