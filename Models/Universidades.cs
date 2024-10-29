@@ -8,4 +8,6 @@ public class Universidades
     public char Tipo { get; set; }
     public string? Mail{ get; set; }
     public string? Descripcion{ get; set; }
+    
+
 }
