@@ -41,15 +41,35 @@ public class DB
         }
         return universidad;
     }
-    public static List<Carreras> ObtenerCarrerasXNombre(string pNombre)
+    public static Universidades MostrarInfoCarrera(int pId)
     {
-        List<Carreras> carreras = new List<Carreras>();
+        Carreras carrera = null;
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Carreras WHERE Nombre = @pNombre";
-            carreras = db.Query<Carreras>(sql, new{pNombre = Carreras.Nombre}).ToList();
+            string sql = "SELECT * FROM Carreras WHERE Id = @pId";
+            carrera = db.Query<Carreras>(sql, new{pId = carrera.Id});
         }
-        return carreras;
+        return carrera;
+    }
+    public static Becas BecasXUni(int pIdUni)
+    {
+        List<Becas> becas = new List<Becas>();
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Becas WHERE IdUniversidad = @pIdUni";
+            becas = db.Query<Becas>(sql, new{pIdUni = beca.IdUniversidad}).ToList();
+        }
+        return becas;
+    }
+    public static Condiciones CondicionesXUni(int pIdUni)
+    {
+        List<Condiciones> condiciones = new List<Condiciones>();
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Condiciones WHERE IdUniversidad = @pIdUni";
+            condiciones = db.Query<Condiciones>(sql, new{pIdUni = condiciones.IdUniversidad}).ToList();
+        }
+        return condiciones;
     }
     public List<Preguntas> ObtenerPreguntasTest()
     {
@@ -57,9 +77,45 @@ public class DB
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Preguntas";
-            carreras = db.Query<Preguntas>(sql, new{pNombre = Preguntas.Nombre}).ToList();
+            preguntas = db.Query<Preguntas>(sql, new{pNombre = Preguntas.Nombre}).ToList();
         }
-        return carreras;
+        return preguntas;
     }
+    public List<Universidad> Busqueda(string pDatoIng)
+    {
+        int resultados = 0;
+        List<Universidades> universidades = new List<Universidades>();
+        List<Carreras> carreras = new List<Carreras>();
+        List<Estudiantes> estudiantes = new List<Estudiantes>();
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng%";
+            universidades = db.Query<Preguntas>(sql, new{pDatoIng = universidades.Nombre}).ToList();
+        }
+        if(universidades.Count() > 0)
+        return universidades;
+        else
+        {
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng%";
+                carreras = db.Query<Carreras>(sql, new{pDatoIng = carreras.Nombre}).ToList();
+            }
+        }
+        if (carreras.Count() > 0)
+        return carreras;
+        else
+        {
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Estudiantes WHERE NombreUsuario LIKE @pDatoIng%";
+                estudiantes = db.Query<Estudiantes>(sql, new{pDatoIng = Estudiantes.NombreUsuario}).ToList();
+            }
+        };
+        if (estudiantes.Count() > 0)
+        return estudiantes;
+        else return -1;    
+    }
+    
 
 }

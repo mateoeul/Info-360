@@ -17,4 +17,46 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Registro(string nombre, string apellido, string foto, string nombreUsuario, string fechaNac, string mail, string bio, string cursada)
+    {
+        DB.RegistroEst(nombre, apellido, foto, nombreUsuario, fechaNac, mail, bio, cursada);
+        return RedirectToAction("Index");
+    }
+    public IActionResult ActualizarInfo(string nombre, string apellido, string foto, string nombreUsuario, string fechaNac, string mail, string bio, string cursada)
+    {
+        DB.ActualizarInfoEst(nombre, apellido, foto, nombreUsuario, fechaNac, mail, bio, cursada);
+        return RedirectToAction("PerfilEst");
+    }
+    public IActionResult Busqueda(string dato)
+    {
+        ViewBag.resultados = DB.Busqueda(dato);
+        return View();
+    }
+    public IActionResult PerfilEst(int id)
+    {
+        ViewBag.estudiante = DB.MostrarInfoEst(id);
+        return View();
+    }
+    public IActionResult PerfilUni(int id)
+    {
+        ViewBag.universidad = DB.MostrarInfoUni(id);
+        ViewBag.becas = DB.BecasXUni(id);
+        ViewBag.Condiciones = DB.CondicionesXUni(id);
+        return View();
+    }
+    public IActionResult CompararCarreras(int id1, int id2)
+    {
+        ViewBag.carrera1 = DB.MostrarInfoCarrera(id1);
+        ViewBag.carrera2 = DB.MostrarInfoCarrera(id2);
+        return View();
+    }
+    public IActionResult Test()
+    {
+        ViewBag.Preguntas = DB.ObtenerPreguntasTest();
+        return View();
+    }
+    public IActionResult ResultadoTest(List<Preguntas> rtas);
+    {
+        
+    }
 }
