@@ -10,14 +10,67 @@ html {
 }
 
 body {
-  margin: 10px;
-  padding: 10px;
+
 }
 
 
 footer {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+
 }
+
+
+
+/* ---------------- LAYOUT --------------------------*/
+
+/*... ... . .NAV.. . . . . ..*/
+ul li{
+  margin-bottom: 2%;
+  list-style: none;
+}
+
+/* BUSCADOR */
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 300px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #5D88B3;
+  width: 100%;
+}
+
+.search-box input::placeholder {
+  color: #5D88B3;
+  font-weight: bold;
+}
+
+.search-box svg {
+  width: 20px;
+  height: 20px;
+  fill: #4a6fa5;
+}
+
+/* BOTONES: */
+.button {
+  background-color: #3d4e7d;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #2f3c61;
+}
+
