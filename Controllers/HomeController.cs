@@ -55,8 +55,47 @@ public class HomeController : Controller
         ViewBag.Preguntas = DB.ObtenerPreguntasTest();
         return View();
     }
-    public IActionResult ResultadoTest(List<Preguntas> rtas);
+    public IActionResult ResultadoTest(List<Preguntas> rtas)
     {
+
+        List<int> idsMax = new List<int>();
+        int cantId = 0;
+        Dictionary<int, int> contador = new Dictionary<int, int>();
+        for (int i = 0; i < rtas.Count; i++)
+        {
+            if (rtas[i].Marcada){
+                if(contador.ContainsKey(rtas[i].IdCarrera))
+                contador[rtas[i].IdCarrera]++;
+                else
+                contador.Add(rtas[i].IdCarrera, 1); 
+            }   
+        }
+
         
+        foreach(var par in contador){
+            if(par.Value > cantId){
+                idsMax.Clear();
+                idsMax.Add(par.Key);
+                cantId = par.Value;
+            } else if (par.Value == cantId){
+                idsMax.Add(par.Key);
+            }
+        }
+
     }
+    /*public IActionResult ResultadoTest(List<Preguntas> rtas)
+    {
+        int idMax;
+        int cantId;
+        List<int> ids = new List<int>();
+        for (int i = 0; i < rtas.Count; i++)
+        {
+            if (rtas[i].Marcada)
+            {
+                ids.Add(rtas[i].IdCarrera); 
+            }  
+                     
+        }       
+    }
+    */
 }
