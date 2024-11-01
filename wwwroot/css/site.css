@@ -9,24 +9,42 @@ html {
   }
 }
 
-body {
-
-}
-
-
-footer {
-
-}
-
-
 
 /* ---------------- LAYOUT --------------------------*/
+.layout {
+  font-family: Arial, sans-serif;
+}
 
 /*... ... . .NAV.. . . . . ..*/
-ul li{
-  margin-bottom: 2%;
+.layout nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom: 1px solid #ddd;
+  margin: 0 auto; /* Centra el nav dentro de la pantalla */
+  margin-left: -6.5%;
+}
+
+
+.layout ul{
+  gap: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
+
+header nav ul li:first-child img {
+  height: 70px;
+}
+
+header nav ul li:first-child {
+  margin-right: 2%; /* Ajuste para que el logo esté más cerca del grupo de navegación */
+}
+/* LOGO */
+
 
 /* BUSCADOR */
 .search-box {
@@ -59,18 +77,31 @@ ul li{
 
 /* BOTONES: */
 .button {
-  background-color: #3d4e7d;
+  background-color: #3C4B7A;
   color: white;
   font-weight: bold;
   border: none;
   border-radius: 20px;
-  padding: 10px 20px;
+  border: 1px solid black;
+  padding: 5px 0 5px 0;
+  width: 10vw;
   cursor: pointer;
   font-size: 16px;
   text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición para fondo y color */
 }
 
 .button:hover {
-  background-color: #2f3c61;
+
+  background-color: #222b47;
+}
+header nav ul li:last-child img {
+  border-radius: 50%;
+  height: 50px;
+  background-color: #ddd;
 }
 
+
+header nav ul li:last-child {
+  margin-left: 5%; 
+}
