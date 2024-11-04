@@ -111,7 +111,9 @@ footer {
   background-color: #2a3b69; /* Fondo azul oscuro */
   color: #ffffff; /* Texto blanco */
   padding: 20px 0;
+  font-family:Arial, Helvetica, sans-serif;
 }
+
 
 .footer-container {
   display: flex;
@@ -137,8 +139,11 @@ footer {
 }
 
 .links-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* Tres columnas para cada .texto-footer */
+  gap: 20px; /* Espacio entre columnas */
+  align-items: start;
+
   width: 40%;
 }
 
@@ -180,4 +185,23 @@ footer {
 footer pre{
   margin-left: 8%;
   margin-top: 7.5%;
+}
+
+
+/*-------------------------------- ----------------------------------------*/
+/*-------------------------------- ----------------------------------------*/
+/*-------------------------------- ----------------------------------------*/
+
+/*--------------------------------    INDEX     ----------------------------------------*/
+.index .fondo-index{
+  position: relative;
+  height: 80vh;
+  background-image: url(../img/carrousel2.jpg);
+  background-size:cover;
+}
+
+.index .search-box{
+  position: absolute;
+  left: 10%;
+  top: 50%;
 }

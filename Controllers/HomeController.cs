@@ -17,7 +17,7 @@ public class HomeController : Controller
     {
         return View();
     }
-    /*public IActionResult Registro(string nombre, string apellido, string foto, string nombreUsuario, string fechaNac, string mail, string bio, string cursada)
+    public IActionResult Registro(string nombre, string apellido, string foto, string nombreUsuario, string fechaNac, string mail, string bio, string cursada)
     {
         DB.RegistroEst(nombre, apellido, foto, nombreUsuario, fechaNac, mail, bio, cursada);
         return RedirectToAction("Index");
@@ -83,7 +83,7 @@ public class HomeController : Controller
         }
 
     }
-    /*public IActionResult ResultadoTest(List<Preguntas> rtas)
+    public IActionResult ResultadoTest(List<Preguntas> rtas)
     {
         int idMax;
         int cantId;
@@ -97,5 +97,5 @@ public class HomeController : Controller
                      
         }       
     }
-    */
+    
 }

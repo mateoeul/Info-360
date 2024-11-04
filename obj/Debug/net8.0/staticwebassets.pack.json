@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\img\\Logo_Uni.png"
     },
     {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\gmail.png",
+      "PackagePath": "staticwebassets\\img\\gmail.png"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\instagram.png",
+      "PackagePath": "staticwebassets\\img\\instagram.png"
+    },
+    {
       "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\logo_uni_nav.png",
       "PackagePath": "staticwebassets\\img\\logo_uni_nav.png"
     },
@@ -23,6 +31,14 @@
     {
       "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\logo_usuario.png",
       "PackagePath": "staticwebassets\\img\\logo_usuario.png"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\whatsapp.png",
+      "PackagePath": "staticwebassets\\img\\whatsapp.png"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\x.png",
+      "PackagePath": "staticwebassets\\img\\x.png"
     },
     {
       "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\js\\site.js",
