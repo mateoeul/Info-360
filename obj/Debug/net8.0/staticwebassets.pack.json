@@ -5,12 +5,24 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
     },
     {
       "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\Logo_Uni.png",
       "PackagePath": "staticwebassets\\img\\Logo_Uni.png"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\logo_uni_nav.png",
+      "PackagePath": "staticwebassets\\img\\logo_uni_nav.png"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\logo_uni_nav2.png",
+      "PackagePath": "staticwebassets\\img\\logo_uni_nav2.png"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\logo_usuario.png",
+      "PackagePath": "staticwebassets\\img\\logo_usuario.png"
     },
     {
       "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\js\\site.js",

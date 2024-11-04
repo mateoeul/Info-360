@@ -17,19 +17,24 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult TipoRegistro(char tipo)
+
+    public IActionResult TipoRegistro(char tipo);
+
+    public IActionResult Registro(string nombre, string apellido, string foto, string nombreUsuario, string fechaNac, string mail, string bio, string cursada)
     {
+
         switch(tipo)
         {
+    
             case 'E':
             return RedirectToAction("RegistroEst");
-            break;
+            
             case 'U':
             return RedirectToAction("RegistroUni");
-            break;
+            
             case 'E':
             return RedirectToAction("RegistroProf");
-            break;
+            
         }
     }
     public IActionResult RegistroEst(Estudiantes estudiante, Usuarios usuario)

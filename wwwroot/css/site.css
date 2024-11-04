@@ -105,3 +105,79 @@ header nav ul li:last-child img {
 header nav ul li:last-child {
   margin-left: 5%; 
 }
+
+/*. . . . . . . FOOTOER . . . . . . .*/
+footer {
+  background-color: #2a3b69; /* Fondo azul oscuro */
+  color: #ffffff; /* Texto blanco */
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+}
+
+.logo-container{
+  display: flex;
+  justify-content: end;
+  margin-right: 5%;
+}
+.logo-container img {
+  width: 60%;
+
+}
+
+.vertical-line {
+  border-left: 1px solid #ffffff; /* Línea vertical */
+  height: 180px; /* Altura de la línea */
+  margin-right:20px
+
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.texto-footer {
+  margin-left: 40%;
+  display: flex;
+  gap: 65%;
+  margin-bottom: 9%;
+}
+
+.texto-footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.texto-footer p:hover {
+  text-decoration: underline;
+}
+
+.logos {
+  margin-left: 40%;
+  display: flex;
+  gap: 20%;
+  margin-top: 12%;
+}
+
+.logos img {
+  width: 24px; /* Tamaño de los íconos de redes sociales */
+  cursor: pointer;
+}
+
+.logos img:hover {
+  opacity: 0.8; /* Efecto de opacidad al pasar el mouse */
+}
+
+
+footer pre{
+  margin-left: 8%;
+  margin-top: 7.5%;
+}
