@@ -1,4 +1,4 @@
-using System.Data.SqlClient;
+/*using System.Data.SqlClient;
 using Dapper;
 
 public class DB
@@ -118,4 +118,4 @@ public class DB
     }
     
 
-}
+}*/
