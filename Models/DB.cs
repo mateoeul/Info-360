@@ -6,13 +6,38 @@ public class DB
     private static string _connectionString = @"Server=localhost;DartaBase=Uni;Trusted_Connection=True;";
     public static void RegistroEst(Estudiantes estudiante)
     {
-        string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, NombreUsuario, FechaNac, Mail, Bio, Cursada) VALUES (@pnombre, @papellido, @pfoto, p@usuario, @pfnac, @pmail, @pbio, @pcursada)";
+        string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, FechaNac, Bio, Cursada) VALUES (@pnombre, @papellido, @pfoto, @pfnac, @pbio, @pcursada)";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            db.Execute(sql, new{pnombre = estudiante.Nombre, papellido = estudiante.Apellido, pfoto = estudiante.Foto, pusuario = estudiante.NombreUsuario, pfnac = estudiante.FechaNac, pmail = Estudiantes.Mail, pbio = Estudiantes.Bio, pcursada = Estudiantes.Cursada});
+            db.Execute(sql, new{pnombre = estudiante.Nombre, papellido = estudiante.Apellido, pfoto = estudiante.Foto, pfnac = estudiante.FechaNac, pbio = estudiante.Bio, pcursada = estudiante.Cursada});
         }
         
     }
+    public static void RegistroUni(Universidades universidad)
+    {
+        string sql = "INSERT INTO Universidades (Nombre, Foto, Ubicacion, Tipo, Ubicacion, Descripcion) VALUES (@pnombre, @pfoto, @pubi, @ptipo, @pdescripcion)";
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            db.Execute(sql, new{pnombre = universidad.Nombre, pfoto = universidad.Foto, pubi = universidad.Ubicación, ptipo = universidad.Tipo, pdescripcion = universidad.Descripcion});
+        }
+        
+    }
+    public static void RegistroProf(Profesores profesor)
+    {
+        string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, FechaNac, Bio) VALUES (@pnombre, @papellido, @pfoto, @pfnac, @pbio,)";
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            db.Execute(sql, new{pnombre = profesor.Nombre, papellido = profesor.Apellido, pfoto = profesor.Foto, pfnac = profesor.FechaNac, pbio = profesor.Bio});
+        }
+    }
+    public static void RegistroUsuario(Usuarios usuario)
+    {
+        string sql = "INSERT INTO Usuario (NombreUsuario, Tipo, Contraseña, Mail, IdExterno) VALUES (@pusuario, @ptipo, @pcontraseña, @pmail, @pidext)";
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            db.Execute(sql, new{usuario.NombreUsuario = pusuario, usuario.Tipo = ptipo, usuario.Contraseña = pcontraseña, usuario.Mail = pmail, usuario.IdExterno = pidext});
+        }
+    }  
     public static Estudiantes MostrarInfoEst(int pId)
     {
         Estudiantes estudiante = null;
@@ -23,12 +48,12 @@ public class DB
         }
         return estudiante;
     }
-    public static void ActualizarInfoEst(int pId, string pnombre, string papellido, string pfoto, string usuario, string pfnac, string pmail, string pbio, string pcursada)
+    public static void ActualizarInfoEst(int pId, string pnombre, string papellido, string pfoto, string pfnac, string pbio, string pcursada)
     {
-        string sql = "UPDATE Estudiantes SET Nombre = @pnombre, Apellido = @papellido, Foto = @pfoto, NombreUsuario = @pusuario, FechaNac = @pfnac, Mail = @pmail, Bio = @pbio, Cursada = @pcursada WHERE Id = @pId";
+        string sql = "UPDATE Estudiantes SET Nombre = @pnombre, Apellido = @papellido, Foto = @pfoto, FechaNac = @pfnac, Bio = @pbio, Cursada = @pcursada WHERE Id = @pId";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            db.Execute(sql, new{pnombre = estudiante.Nombre, papellido = estudiante.Apellido, pfoto = estudiante.Foto, pusuario = estudiante.NombreUsuario, pfnac = estudiante.FechaNac, pmail = Estudiantes.Mail, pbio = Estudiantes.Bio, pcursada = Estudiantes.Cursada});
+            db.Execute(sql, new{pnombre = estudiante.Nombre, papellido = estudiante.Apellido, pfoto = estudiante.Foto, pusuario = estudiante.NombreUsuario, pfnac = estudiante.FechaNac, pbio = estudiante.Bio, pcursada = estudiante.Cursada});
         }
     }
     public static Universidades MostrarInfoUni(int pId)
@@ -81,7 +106,7 @@ public class DB
         }
         return preguntas;
     }
-    public List<Universidad> Busqueda(string pDatoIng)
+    public List<Universidades> Busqueda(string pDatoIng) //corregir y crear filtros
     {
         int resultados = 0;
         List<Universidades> universidades = new List<Universidades>();
@@ -116,6 +141,5 @@ public class DB
         return estudiantes;
         else return -1;    
     }
-    
-
 }
+
