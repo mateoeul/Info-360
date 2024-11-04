@@ -17,12 +17,40 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult Registro(string nombre, string apellido, string foto, string nombreUsuario, string fechaNac, string mail, string bio, string cursada)
+    public IActionResult TipoRegistro(char tipo)
     {
-        DB.RegistroEst(nombre, apellido, foto, nombreUsuario, fechaNac, mail, bio, cursada);
+        switch(tipo)
+        {
+            case 'E':
+            return RedirectToAction("RegistroEst");
+            break;
+            case 'U':
+            return RedirectToAction("RegistroUni");
+            break;
+            case 'E':
+            return RedirectToAction("RegistroProf");
+            break;
+        }
+    }
+    public IActionResult RegistroEst(Estudiantes estudiante, Usuarios usuario)
+    {
+        DB.RegistroEst(estudiante);
+        DB.RegistroUsuario(usuario);
         return RedirectToAction("Index");
     }
-    public IActionResult ActualizarInfo(string nombre, string apellido, string foto, string nombreUsuario, string fechaNac, string mail, string bio, string cursada)
+    public IActionResult RegistroProf(Profesores profesor, Usuarios usuario)
+    {
+        DB.RegistroProf(profesor);
+        DB.RegistroUsuario(usuario);
+        return RedirectToAction("Index");
+    }
+    public IActionResult RegistroUni(Universidades universidad, Usuarios usuario)
+    {
+        DB.RegistroEst(universidad);
+        DB.RegistroUsuario(usuario);
+        return RedirectToAction("Index");
+    }
+    public IActionResult ActualizarInfo(string nombre, string apellido, string foto, string fechaNac, string mail, string bio, string cursada)
     {
         DB.ActualizarInfoEst(nombre, apellido, foto, nombreUsuario, fechaNac, mail, bio, cursada);
         return RedirectToAction("PerfilEst");
@@ -57,7 +85,6 @@ public class HomeController : Controller
     }
     public IActionResult ResultadoTest(List<Preguntas> rtas)
     {
-
         List<int> idsMax = new List<int>();
         int cantId = 0;
         Dictionary<int, int> contador = new Dictionary<int, int>();
@@ -69,9 +96,7 @@ public class HomeController : Controller
                 else
                 contador.Add(rtas[i].IdCarrera, 1); 
             }   
-        }
-
-        
+        }      
         foreach(var par in contador){
             if(par.Value > cantId){
                 idsMax.Clear();
@@ -81,21 +106,5 @@ public class HomeController : Controller
                 idsMax.Add(par.Key);
             }
         }
-
     }
-    /*public IActionResult ResultadoTest(List<Preguntas> rtas)
-    {
-        int idMax;
-        int cantId;
-        List<int> ids = new List<int>();
-        for (int i = 0; i < rtas.Count; i++)
-        {
-            if (rtas[i].Marcada)
-            {
-                ids.Add(rtas[i].IdCarrera); 
-            }  
-                     
-        }       
-    }
-    */
 }

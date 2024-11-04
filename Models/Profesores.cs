@@ -6,6 +6,5 @@ public class Profesores
     public string? Apellido{ get; set; }
     public string? NombreUsuario{ get; set; }
     public DateOnly FechaNac{ get; set; }
-    public string? Mail{ get; set; }
     public string? Bio{ get; set; }
 }
