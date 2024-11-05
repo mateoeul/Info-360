@@ -1,5 +1,7 @@
 using System.Diagnostics;
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
+using test_session.Models;
 using Uni_.Models;
 
 namespace Uni_.Controllers;
@@ -17,8 +19,15 @@ public class HomeController : Controller
     {
         return View();
     }
-
-
+    public IActionResult Index()
+    {
+        ViewBag.User = Usuario.FromString(HttpContext.Session.GetString("user"));
+        if(ViewBag.User is null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+        return View();
+    }
     public IActionResult TipoRegistro(char tipo);
 
     public IActionResult Registro(string nombre, string apellido, string foto, string nombreUsuario, string fechaNac, string mail, string bio, string cursada)
