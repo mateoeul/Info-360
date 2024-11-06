@@ -48,9 +48,10 @@ header nav ul li:first-child {
 
 /* BUSCADOR */
 .search-box {
+  background-color: #ffffff;
   display: flex;
   align-items: center;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 20px;
   padding: 5px 10px;
   width: 300px;
@@ -202,6 +203,59 @@ footer pre{
 
 .index .search-box{
   position: absolute;
-  left: 10%;
-  top: 50%;
+  width: 30%;
+  top: 45%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  border: none;
+}
+.index .buscador-index h1{
+  color:#ffffff;
+  font-size: 80px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 900;
+  position: absolute;
+  top: 39%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+/*    . . . . UNIVERSIDADES INDEX . . . . .*/
+*{
+  border: 1px solid black;
+}
+.universidades-index {
+  background-color: #F8FFFF;
+  color: #5D88B3;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center;
+  margin: 0 auto;
+
+}
+
+.universidades-index h3 {
+  font-weight: bolder;
+  text-align: left;
+  width: auto;
+  margin: 0;
+  width: 20%;
+}
+
+.carousel-inner {
+  width: 100%;
+  gap: 3%;
+}
+
+.foto-facultades {
+  width: 232px;
+  height: 232px;
+  border-radius: 50%;
+}
+
+
+.universidades-index button{
+  width: 10%;
 }

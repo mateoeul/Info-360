@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\img\\Logo_Uni.png"
     },
     {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\carrousel2.jpg",
+      "PackagePath": "staticwebassets\\img\\carrousel2.jpg"
+    },
+    {
       "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\gmail.png",
       "PackagePath": "staticwebassets\\img\\gmail.png"
     },
@@ -31,6 +35,14 @@
     {
       "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\logo_usuario.png",
       "PackagePath": "staticwebassets\\img\\logo_usuario.png"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\uba-derecho.jfif",
+      "PackagePath": "staticwebassets\\img\\uba-derecho.jfif"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\uba-derecho.jpg",
+      "PackagePath": "staticwebassets\\img\\uba-derecho.jpg"
     },
     {
       "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\whatsapp.png",
