@@ -15,10 +15,10 @@ public class DB
     }
     public static void RegistroUni(Universidades universidad)
     {
-        string sql = "INSERT INTO Universidades (Nombre, Foto, Ubicacion, Tipo, Ubicacion, Descripcion) VALUES (@pnombre, @pfoto, @pubi, @ptipo, @pdescripcion)";
+        string sql = "INSERT INTO Universidades (Nombre, Foto, Ubicacion, Tipo, Ubicacion, Descripcion, Valoracion) VALUES (@pnombre, @pfoto, @pubi, @ptipo, @pdescripcion @pValoracion)";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            db.Execute(sql, new{pnombre = universidad.Nombre, pfoto = universidad.Foto, pubi = universidad.Ubicación, ptipo = universidad.Tipo, pdescripcion = universidad.Descripcion});
+            db.Execute(sql, new{pnombre = universidad.Nombre, pfoto = universidad.Foto, pubi = universidad.Ubicación, ptipo = universidad.Tipo, pdescripcion = universidad.Descripcion, pvaloracion = universidad.Valoración|});
         }
         
     }
@@ -106,40 +106,43 @@ public class DB
         }
         return preguntas;
     }
-    public List<Universidades> Busqueda(string pDatoIng) //corregir y crear filtros
+    public List<Universidades> Busqueda(string pDatoIng, Busqueda busqueda) 
     {
-        int resultados = 0;
-        List<Universidades> universidades = new List<Universidades>();
         List<Carreras> carreras = new List<Carreras>();
-        List<Estudiantes> estudiantes = new List<Estudiantes>();
-        using(SqlConnection db = new SqlConnection(_connectionString))
-        {
-            string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng%";
-            universidades = db.Query<Preguntas>(sql, new{pDatoIng = universidades.Nombre}).ToList();
-        }
-        if(universidades.Count() > 0)
-        return universidades;
-        else
+        List<Universidades> universidades = new List<Universidades>();
+        List<ResultadoBusqueda> resultados = new List<ResultadoBusqueda>();
+        if(busqueda.Tipo = t)
         {
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng%";
-                carreras = db.Query<Carreras>(sql, new{pDatoIng = carreras.Nombre}).ToList();
+                string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng%";
+                universidades = db.Query<Universidades>(sql, new{pDatoIng = universidades.Nombre}).ToList();
             }
+            universidades.CopyTo(resultados);
+            {
+                using(SqlConnection db = new SqlConnection(_connectionString))
+                {
+                    string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng%";
+                    carreras = db.Query<Carreras>(sql, new{pDatoIng = carreras.Nombre}).ToList();
+                }
+            }
+            carreras.CopyTo(resultados); //corregir
+            if (resultados.Count > 0)
+            return resultados;
+            else 
+            return null;
         }
-        if (carreras.Count() > 0)
-        return carreras;
-        else
+        else if (busqueda.Tipo = u && busqueda.TipoUni = a)
         {
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * FROM Estudiantes WHERE NombreUsuario LIKE @pDatoIng%";
-                estudiantes = db.Query<Estudiantes>(sql, new{pDatoIng = Estudiantes.NombreUsuario}).ToList();
+                string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng% AND Tipo = a AND Valoraciones >= ";
+                usuarios = db.Query<Preguntas>(sql, new{pDatoIng = universidades.Nombre, ptipo = universidades.Tipo,}).ToList();
             }
-        };
-        if (estudiantes.Count() > 0)
-        return estudiantes;
-        else return -1;    
+            usuarios.CopyTo(resultados); //corregir
+        }
+        
+        
     }
 }
 
