@@ -204,7 +204,7 @@ footer pre{
 .index .search-box{
   position: absolute;
   width: 30%;
-  top: 45%; 
+  top: 47%; 
   left: 50%; 
   transform: translate(-50%, -50%); 
   border: none;
@@ -221,9 +221,6 @@ footer pre{
 }
 
 /*    . . . . UNIVERSIDADES INDEX . . . . .*/
-*{
-  border: 1px solid black;
-}
 .universidades-index {
   background-color: #F8FFFF;
   color: #5D88B3;
@@ -231,31 +228,48 @@ footer pre{
   padding-bottom: 3%;
   display: flex;
   align-items: center; /* Centra verticalmente el contenido */
-  justify-content: center;
+  justify-content: space-around;
   margin: 0 auto;
-
 }
 
 .universidades-index h3 {
   font-weight: bolder;
-  text-align: left;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 2px;
   width: auto;
   margin: 0;
-  width: 20%;
+  width: 30%;
+  margin-left: 15%;
+  margin-right: 8%;
 }
 
-.carousel-inner {
-  width: 100%;
-  gap: 3%;
+.carousel{
+  width: 1400px;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center; /* Centra el contenido en cada slide */
 }
 
 .foto-facultades {
   width: 232px;
   height: 232px;
   border-radius: 50%;
+  margin-left: 2%;
+  margin-right: 2%;
+  
 }
 
+.carousel-control-next-icon {
+  background-color: #434343;
+  border-radius: 50%;
+}
 
-.universidades-index button{
-  width: 10%;
+.carousel-control-next-icon:hover {
+  background-color: #626262;
+  border-radius: 50%;
 }
