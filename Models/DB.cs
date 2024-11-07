@@ -106,43 +106,77 @@ public class DB
         }
         return preguntas;
     }
-    public List<Universidades> Busqueda(string pDatoIng, Busqueda busqueda) 
+    public List<Universidades> Busqueda(string pDatoIng, Busqueda pbusqueda) 
     {
-        List<Carreras> carreras = new List<Carreras>();
-        List<Universidades> universidades = new List<Universidades>();
         List<ResultadoBusqueda> resultados = new List<ResultadoBusqueda>();
-        if(busqueda.Tipo = t)
+        if(pbusqueda.Valoraciones == null)
+        busqueda.Valoraciones = 0;
+        
+        if(busqueda.Tipo == todo)
         {
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng%";
-                universidades = db.Query<Universidades>(sql, new{pDatoIng = universidades.Nombre}).ToList();
-            }
-            universidades.CopyTo(resultados);
+                resultados.Universidadesr = db.Query<Universidades>(sql, new{pDatoIng = universidades.Nombre}).ToList();
+            }        
+            using(SqlConnection db = new SqlConnection(_connectionString))
             {
-                using(SqlConnection db = new SqlConnection(_connectionString))
-                {
-                    string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng%";
-                    carreras = db.Query<Carreras>(sql, new{pDatoIng = carreras.Nombre}).ToList();
-                }
-            }
-            carreras.CopyTo(resultados); //corregir
-            if (resultados.Count > 0)
-            return resultados;
-            else 
+                string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng%";
+                resultados.Carrerasr = db.Query<Carreras>(sql, new{pDatoIng = carreras.Nombre}).ToList();
+            }          
+            if (resultados.Carrerasr.Count == 0 && resultados.Universidadesr.Count == 0)
             return null;
+            else 
+            return resultados;
         }
-        else if (busqueda.Tipo = u && busqueda.TipoUni = a)
+        else if(busqueda.Tipo == carrera)
         {
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng% AND Tipo = a AND Valoraciones >= ";
-                usuarios = db.Query<Preguntas>(sql, new{pDatoIng = universidades.Nombre, ptipo = universidades.Tipo,}).ToList();
+                string sql = "SELECT Id FROM Carreras WHERE Nombre LIKE @pDatoIng%" 
+                resultados.Carrerasr = db.Query<Carreras>(sql, new{pId = carrera.Id}).ToList();
             }
-            usuarios.CopyTo(resultados); //corregir
+        }
+        else if (busqueda.Tipo == uni && busqueda.TipoUni == null )
+        {
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT Id FROM Universidades WHERE Nombre LIKE @pDatoIng% AND Valoraciones >= @pbusqueda.Valoraciones";
+                resultados.Universidadesr = db.Query<Universidades>(sql, new{pDatoIng = universidades.Nombre, ptipo = universidades.Tipo,}).ToList();
+            }
+            if (resultados.Universidadesr.Count == 0)
+            return null;
+            else 
+            return resultados;
+        }
+        else if(busqueda.Tipo == uni && busqueda.TipoUni == publica)
+        {
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT Id FROM Universidades WHERE Nombre LIKE @pDatoIng% AND Tipo = @pbusqueda.Tipo AND Valoraciones >= @pbusqueda.Valoraciones";
+                resultados.Universidadesr = db.Query<Universidades>(sql, new{pDatoIng = universidades.Nombre, ptipo = universidades.Tipo,}).ToList();
+            }
+            if (resultados.Universidadesr.Count == 0)
+            return null;
+            else 
+            return resultados;
         }
         
         
     }
+    public bool VerificarLogin(string pmail, string pcontraseña)
+    {
+        Usuarios usuario = null;
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT Mail, Contraseña FROM Usuarios WHERE Mail = @pmail AND Contraseña = @pcontraseña";
+            usuario = db.Query<Usuarios>(sql, new{pmail = usuario.Mail, pcontraseña = usuario.Contraseña});
+        }
+        if(usuario != null)
+        return true;
+        else
+        return false;
+    }
+
 }
 

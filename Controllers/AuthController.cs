@@ -27,7 +27,7 @@ public class AuthController : Controller
     [HttpPost]
     public IActionResult VerificarLogin(string email, string password)
     {
-        if (email == "admin@gmail.com" && password == "admin")
+        if (DB.VerificarLogin(email, password))
         {
             HttpContext.Session.SetString("user", new Usuario(email, password).ToString());
             return RedirectToAction("Index", "Home");

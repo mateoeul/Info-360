@@ -1,5 +1,5 @@
 public class ResultadoBusqueda
 {
-    public int Id {get; set;}
-    public char Tipo {get; set;}
+    public List<Carreras> Carrerasr {get; set;}
+    public List<Universidades> Universidadesr {get; set;}
 }
