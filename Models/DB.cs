@@ -15,10 +15,10 @@ public class DB
     }
     public static void RegistroUni(Universidades universidad)
     {
-        string sql = "INSERT INTO Universidades (Nombre, Foto, Ubicacion, Tipo, Ubicacion, Descripcion, Valoracion) VALUES (@pnombre, @pfoto, @pubi, @ptipo, @pdescripcion @pValoracion)";
+        string sql = "INSERT INTO Universidades (Nombre, Foto, Ubicacion, Tipo, Ubicacion, Descripcion, Valoracion) VALUES (@pnombre, @pfoto, @pubi, @ptipo, @pdescripcion)";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            db.Execute(sql, new{pnombre = universidad.Nombre, pfoto = universidad.Foto, pubi = universidad.Ubicación, ptipo = universidad.Tipo, pdescripcion = universidad.Descripcion, pvaloracion = universidad.Valoración|});
+            db.Execute(sql, new{pnombre = universidad.Nombre, pfoto = universidad.Foto, pubi = universidad.Ubicación, ptipo = universidad.Tipo, pdescripcion = universidad.Descripcion});
         }
         
     }
@@ -110,9 +110,13 @@ public class DB
     {
         List<ResultadoBusqueda> resultados = new List<ResultadoBusqueda>();
         if(pbusqueda.Valoraciones == null)
-        busqueda.Valoraciones = 0;
+        pbusqueda.Valoraciones = 0;
+        if(pbusqueda.PrecioMax == null)
+        pbusqueda.PrecioMax = int.MaxValue;
+        if(pbusqueda.PrecioMin == null)
+        pbusqueda.PrecioMin = 0;
         
-        if(busqueda.Tipo == todo)
+        if(pbusqueda.Tipo == 't') //busca carreras y universidades de todo tipo
         {
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
@@ -129,15 +133,15 @@ public class DB
             else 
             return resultados;
         }
-        else if(busqueda.Tipo == carrera)
+        else if(pbusqueda.Tipo == 'c') //busca carreras
         {
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT Id FROM Carreras WHERE Nombre LIKE @pDatoIng%" 
+                string sql = "SELECT Id FROM Carreras WHERE Nombre LIKE @pDatoIng% AND Valoraciones >= @pbusqueda.Valoraciones AND Costo >= @pbusqueda.PrecioMin AND Costo <= @pbusqueda.PrecioMax";
                 resultados.Carrerasr = db.Query<Carreras>(sql, new{pId = carrera.Id}).ToList();
             }
         }
-        else if (busqueda.Tipo == uni && busqueda.TipoUni == null )
+        else if (pbusqueda.Tipo == 'u' && pbusqueda.TipoUni == null ) //busca universidades de todo tipo
         {
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
@@ -149,7 +153,7 @@ public class DB
             else 
             return resultados;
         }
-        else if(busqueda.Tipo == uni && busqueda.TipoUni == publica)
+        else if(pbusqueda.Tipo == 'u' && pbusqueda.TipoUni != null) //busca universidades de un tipo (publica o privada)
         {
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
@@ -161,8 +165,6 @@ public class DB
             else 
             return resultados;
         }
-        
-        
     }
     public bool VerificarLogin(string pmail, string pcontraseña)
     {
