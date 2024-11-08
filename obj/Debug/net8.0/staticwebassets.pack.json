@@ -9,12 +9,48 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\ITBA.jpg",
+      "PackagePath": "staticwebassets\\img\\ITBA.jpg"
+    },
+    {
       "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\Logo_Uni.png",
       "PackagePath": "staticwebassets\\img\\Logo_Uni.png"
     },
     {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\UCA.jpg",
+      "PackagePath": "staticwebassets\\img\\UCA.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\UP.jpg",
+      "PackagePath": "staticwebassets\\img\\UP.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\UTN.jpg",
+      "PackagePath": "staticwebassets\\img\\UTN.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\Uba.jpg",
+      "PackagePath": "staticwebassets\\img\\Uba.jpg"
+    },
+    {
       "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\carrousel2.jpg",
       "PackagePath": "staticwebassets\\img\\carrousel2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\comparar1.jpg",
+      "PackagePath": "staticwebassets\\img\\comparar1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\comparar2.png",
+      "PackagePath": "staticwebassets\\img\\comparar2.png"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\ditella.jfif",
+      "PackagePath": "staticwebassets\\img\\ditella.jfif"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\fondo-test.jpg",
+      "PackagePath": "staticwebassets\\img\\fondo-test.jpg"
     },
     {
       "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\gmail.png",

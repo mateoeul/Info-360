@@ -19,6 +19,16 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult InicioSesion()
+    {
+        return View();
+    }
+    public IActionResult Perfil()
+    {
+        return View();
+    }
+    
+    
     public IActionResult Index()
     {
         ViewBag.User = Usuario.FromString(HttpContext.Session.GetString("user"));
