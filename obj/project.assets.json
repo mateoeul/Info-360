@@ -505,7 +505,11 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\48111117\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\48044168\\.nuget\\packages\\": {},
+>>>>>>> de88d923e010ea7f718e7372b07bfea07fc5fa37
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -521,7 +525,11 @@
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\48111117\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\48044168\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> de88d923e010ea7f718e7372b07bfea07fc5fa37
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
