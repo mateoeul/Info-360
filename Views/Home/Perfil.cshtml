@@ -1,0 +1,68 @@
+<section class="perfil-usuario">
+
+    <div class="banner"></div>
+    <img src="../img/logo_usuario.png" class="foto-facultades" alt="...">
+
+    <section class="info-perfil">
+        <div class="Info-personal">
+            <h4>Nombre usuario</h4>
+            <h5>Nombre completo</h5>
+            <h6>Breve descripción</h6>
+            <h6>Ubicacion</h6>
+        </div>
+
+        <div class="Info-usuario">
+            <div class="estadisticas">
+                <div class="Amigos">
+                    <h4>Amigos</h4>
+                    <h4>20</h4>
+                </div>
+                
+                <div class="Amigos">
+                    <h4>Publicaciones</h4>
+                    <h4>0</h4>
+                </div>
+                
+                <div class="Amigos">
+                    <h4>Reels</h4>
+                    <h4>1</h4>
+                </div>
+            </div>
+
+            <div class="descripcion">
+                <p>El bicho Siu</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="publicaciones">
+
+        <div class="botones-toggle">
+            <div>
+                <button id="botonPublicaciones" class="button boton-activo" onclick="mostrarSeccion('publicaciones')">Publicaciones</button>
+                <button id="botonReels" class="button" onclick="mostrarSeccion('reels')">Reels</button>
+            </div>
+
+            <hr>
+
+            
+            <div id="contenidoPublicaciones" class="contenido contenido-activo">
+                <p>Aún no hay publicaciones del usuario</p>
+            </div>
+
+            <div id="contenidoReels" class="contenido contenido-oculto">
+                <p>Los reels no están disponibles en esta version</p>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+</section>
+
+<script src="../js/perfil.js"></script>
