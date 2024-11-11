@@ -45,3 +45,6 @@ C:\Users\48044168\Desktop\Info-360\obj\Debug\net8.0\refint\Uni..dll
 C:\Users\48044168\Desktop\Info-360\obj\Debug\net8.0\Uni..pdb
 C:\Users\48044168\Desktop\Info-360\obj\Debug\net8.0\Uni..genruntimeconfig.cache
 C:\Users\48044168\Desktop\Info-360\obj\Debug\net8.0\ref\Uni..dll
+C:\Users\48111117\Info-360\obj\Debug\net8.0\Uni..dll
+C:\Users\48111117\Info-360\obj\Debug\net8.0\refint\Uni..dll
+C:\Users\48111117\Info-360\obj\Debug\net8.0\Uni..pdb

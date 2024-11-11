@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
-using test_session.Models;
 using Uni_.Models;
 
 namespace Uni_.Controllers;
@@ -14,11 +13,6 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-
-    public IActionResult Index()
-    {
-        return View();
-    }
     public IActionResult InicioSesion()
     {
         return View();
@@ -27,34 +21,30 @@ public class HomeController : Controller
     {
         return View();
     }
-    
-    
     public IActionResult Index()
     {
-        ViewBag.User = Usuario.FromString(HttpContext.Session.GetString("user"));
+        ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
         if(ViewBag.User is null)
         {
             return RedirectToAction("Login", "Auth");
         }
         return View();
     }
-    public IActionResult TipoRegistro(char tipo);
-
-    public IActionResult Registro(string nombre, string apellido, string foto, string nombreUsuario, string fechaNac, string mail, string bio, string cursada)
+    public IActionResult Registro(char tipo)
     {
-
         switch(tipo)
         {
-    
             case 'E':
             return RedirectToAction("RegistroEst");
             
             case 'U':
             return RedirectToAction("RegistroUni");
             
-            case 'E':
+            case 'P':
             return RedirectToAction("RegistroProf");
-            
+
+            default:
+            return View("Index");
         }
     }
     public IActionResult RegistroEst(Estudiantes estudiante, Usuarios usuario)
@@ -71,18 +61,18 @@ public class HomeController : Controller
     }
     public IActionResult RegistroUni(Universidades universidad, Usuarios usuario)
     {
-        DB.RegistroEst(universidad);
+        DB.RegistroUni(universidad);
         DB.RegistroUsuario(usuario);
         return RedirectToAction("Index");
     }
-    public IActionResult ActualizarInfo(string nombre, string apellido, string foto, string fechaNac, string mail, string bio, string cursada)
+    public IActionResult ActualizarInfo(int id, string nombre, string apellido, string foto, string fechaNac, string bio, string cursada)
     {
-        DB.ActualizarInfoEst(nombre, apellido, foto, nombreUsuario, fechaNac, mail, bio, cursada);
+        DB.ActualizarInfoEst(nombre, apellido, foto, fechaNac, bio, cursada);
         return RedirectToAction("PerfilEst");
     }
-    public IActionResult Busqueda(string dato)
+    public IActionResult Busqueda(string dato, Busqueda busqueda)
     {
-        ViewBag.resultados = DB.Busqueda(dato);
+        ViewBag.resultados = DB.Busqueda(dato, busqueda);
         return View();
     }
     public IActionResult PerfilEst(int id)
@@ -131,21 +121,6 @@ public class HomeController : Controller
                 idsMax.Add(par.Key);
             }
         }
+        return View();
     }
-
-    public IActionResult ResultadoTest(List<Preguntas> rtas)
-    {
-        int idMax;
-        int cantId;
-        List<int> ids = new List<int>();
-        for (int i = 0; i < rtas.Count; i++)
-        {
-            if (rtas[i].Marcada)
-            {
-                ids.Add(rtas[i].IdCarrera); 
-            }  
-                     
-        }       
-    }
-
 }

@@ -6,6 +6,7 @@ public class Universidades
     public string? Ubicación{ get; set; }
     public char Tipo { get; set; }
     public string? Descripcion{ get; set; }
+    public string IdUsuario{get; set;}
     
 
 }

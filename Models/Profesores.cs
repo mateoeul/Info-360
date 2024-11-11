@@ -7,4 +7,5 @@ public class Profesores
     public string? NombreUsuario{ get; set; }
     public DateOnly FechaNac{ get; set; }
     public string? Bio{ get; set; }
+    public string IdUsuario{get; set;}
 }

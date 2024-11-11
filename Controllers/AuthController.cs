@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
-using test_session.Models;
 using Uni_.Models;
 
 namespace test_session.Controllers;
@@ -29,7 +28,7 @@ public class AuthController : Controller
     {
         if (DB.VerificarLogin(email, password))
         {
-            HttpContext.Session.SetString("user", new Usuario(email, password).ToString());
+            HttpContext.Session.SetString("user", new Usuarios(email, password).ToString());
             return RedirectToAction("Index", "Home");
         }
         else

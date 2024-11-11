@@ -1,9 +1,10 @@
 using System.Text.Json;
 
+[Serializable]
+
 public class Usuarios
 {
 
-    [Serializable]
     public int Id {get; set;}
     public char Tipo {get; set;}
     public string Mail {get; set;}
@@ -21,6 +22,6 @@ public class Usuarios
         {
             return null;
         }
-        return JsonSerializer.Deserialize<Usuario>(json);
+        return JsonSerializer.Deserialize<Usuarios>(json);
     }
 }

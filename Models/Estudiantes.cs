@@ -7,4 +7,5 @@ public class Estudiantes
     public DateOnly FechaNac{ get; set; }
     public string? Bio{ get; set; }
     public int Cursada{ get; set; }
+    public string IdUsuario{get; set;}
 }
