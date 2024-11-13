@@ -65,9 +65,9 @@ public class HomeController : Controller
         DB.RegistroUsuario(usuario);
         return RedirectToAction("Index");
     }
-    public IActionResult ActualizarInfo(int id, string nombre, string apellido, string foto, string fechaNac, string bio, string cursada)
+    public IActionResult ActualizarInfo(Estudiantes estudiante, string nombre, string apellido, string foto, string fechaNac, string bio, string cursada)
     {
-        DB.ActualizarInfoEst(nombre, apellido, foto, fechaNac, bio, cursada);
+        DB.ActualizarInfoEst(estudiante, nombre, apellido, foto, fechaNac, bio, cursada);
         return RedirectToAction("PerfilEst");
     }
     public IActionResult Busqueda(string dato, Busqueda busqueda)

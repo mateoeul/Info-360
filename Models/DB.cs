@@ -44,11 +44,11 @@ public class DB
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Estudiantes WHERE Id = @pId";
-            estudiante = db.Query<Estudiantes>(sql, new{pId = estudiante.Id});
+            estudiante = db.QueryFirstOrDefault<Estudiantes>(sql, new{pId = estudiante.Id});
         }
         return estudiante;
     }
-    public static void ActualizarInfoEst(int id, string pnombre, string papellido, string pfoto, string pfnac, string pbio, string pcursada)
+    public static void ActualizarInfoEst(Estudiantes estudiante, string pnombre, string papellido, string pfoto, string pfnac, string pbio, string pcursada)
     {
         string sql = "UPDATE Estudiantes SET Nombre = @pnombre, Apellido = @papellido, Foto = @pfoto, FechaNac = @pfnac, Bio = @pbio, Cursada = @pcursada WHERE Id = @pId";
         using(SqlConnection db = new SqlConnection(_connectionString))
@@ -62,7 +62,7 @@ public class DB
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Universidades WHERE Id = @pId";
-            universidad = db.Query<Universidades>(sql, new{pId = universidad.Id});
+            universidad = db.QueryFirstOrDefault<Universidades>(sql, new{pId = universidad.Id});
         }
         return universidad;
     }
@@ -72,27 +72,27 @@ public class DB
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Carreras WHERE Id = @pId";
-            carrera = db.Query<Carreras>(sql, new{pId = carrera.Id});
+            carrera = db.QueryFirstOrDefault<Carreras>(sql, new{pId = carrera.Id});
         }
         return carrera;
     }
-    public static Becas BecasXUni(int pIdUni)
+    public static Becas BecasXUni(int idUni)
     {
         List<Becas> becas = new List<Becas>();
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Becas WHERE IdUniversidad = @pIdUni";
-            becas = db.Query<Becas>(sql, new{pIdUni = becas.IdUniversidad}).ToList();
+            becas = db.Query<Becas>(sql, new{pIdUni = idUni}).ToList();
         }
         return becas;
     }
-    public static Condiciones CondicionesXUni(int pIdUni)
+    public static Condiciones CondicionesXUni(int idUni)
     {
         List<Condiciones> condiciones = new List<Condiciones>();
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Condiciones WHERE IdUniversidad = @pIdUni";
-            condiciones = db.Query<Condiciones>(sql, new{pIdUni = condiciones.IdUniversidad}).ToList();
+            condiciones = db.Query<Condiciones>(sql, new{pIdUni = idUni}).ToList();
         }
         return condiciones;
     }
@@ -102,13 +102,14 @@ public class DB
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Preguntas";
-            preguntas = db.Query<Preguntas>(sql, new{pNombre = preguntas.Nombre}).ToList();
+            preguntas = db.Query<Preguntas>(sql).ToList();
         }
         return preguntas;
     }
-    public ResultadoBusqueda Busqueda(string pDatoIng, Busqueda pbusqueda) 
+    public ResultadoBusqueda Busqueda(string datoIng, Busqueda pbusqueda) 
     {
         ResultadoBusqueda resultados = new ResultadoBusqueda();
+        resultados = null;
         if(pbusqueda.Valoraciones == null)
         pbusqueda.Valoraciones = 0;
         if(pbusqueda.PrecioMax == null)
@@ -121,12 +122,12 @@ public class DB
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng%";
-                resultados.Universidadesr = db.Query<ResultadoBusqueda>(sql, new{pDatoIng = resultados.Universidadesr.Nombre}).ToList();
+                resultados.Universidadesr = db.Query<ResultadoBusqueda>(sql, new{pDatoIng = datoIng}).ToList();
             }        
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng%";
-                resultados.Carrerasr = db.Query<ResultadoBusqueda>(sql, new{pDatoIng = resultados.Carrerasr.Nombre}).ToList();
+                resultados.Carrerasr = db.Query<ResultadoBusqueda>(sql, new{pDatoIng = datoIng}).ToList();
             }          
             if (resultados.Carrerasr.Count == 0 && resultados.Universidadesr.Count == 0)
             return null;
@@ -138,7 +139,7 @@ public class DB
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT Id FROM Carreras WHERE Nombre LIKE @pDatoIng% AND Valoraciones >= @pvaloraciones AND Costo >= @pmin AND Costo <= @pmax";
-                resultados.Carrerasr = db.Query<ResultadoBusqueda>(sql, new{pId = Carrerasr.Id, pmin = pbusqueda.PrecioMin, pmax = pbusqueda.PrecioMax, pvaloraciones = pbusqueda.Valoraciones}).ToList();
+                resultados.Carrerasr = db.Query<ResultadoBusqueda>(sql, new{pmin = pbusqueda.PrecioMin, pmax = pbusqueda.PrecioMax, pvaloraciones = pbusqueda.Valoraciones}).ToList();
             }
         }
         else if (pbusqueda.Tipo == 'u' && pbusqueda.TipoUni == null ) //busca universidades de todo tipo
@@ -146,7 +147,7 @@ public class DB
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT Id FROM Universidades WHERE Nombre LIKE @pDatoIng% AND Valoraciones >= @pvaloraciones";
-                resultados.Universidadesr = db.Query<ResultadoBusqueda>(sql, new{pDatoIng = resultados.Universidadesr.Nombre, pvaloraciones = pbusqueda.Valoraciones}).ToList();
+                resultados.Universidadesr = db.Query<ResultadoBusqueda>(sql, new{pDatoIng = datoIng, pvaloraciones = pbusqueda.Valoraciones}).ToList();
             }
             if (resultados.Universidadesr.Count == 0)
             return null;
@@ -155,11 +156,10 @@ public class DB
         }
         else if(pbusqueda.Tipo == 'u' && pbusqueda.TipoUni != null) //busca universidades de un tipo (publica o privada)
         {   
-
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT Id FROM Universidades WHERE Nombre LIKE @pDatoIng% AND Tipo = @ptipo AND Valoraciones >= @pvaloraciones";
-                resultados.Universidadesr = db.Query<ResultadoBusqueda>(sql, new{pDatoIng = resultados.Universidadesr.Nombre, ptipo = resultados.Universidadesr.Tipo, pvaloraciones = pbusqueda.Valoraciones}).ToList();
+                resultados.Universidadesr = db.Query<ResultadoBusqueda>(sql, new{pDatoIng = datoIng, ptipo = pbusqueda.Tipo, pvaloraciones = pbusqueda.Valoraciones}).ToList();
             }
             if (resultados.Universidadesr.Count == 0)
             return null;
@@ -169,14 +169,14 @@ public class DB
         else
         return resultados;
     }
-    public bool VerificarLogin(string pmail, string pcontraseña)
+    public bool VerificarLogin(string mail, string contra)
     {
-        Usuarios usuario = new Usuarios();
+        Usuarios usuario = null;
         usuario = null;
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT Mail, Contraseña FROM Usuarios WHERE Mail = @pmail AND Contraseña = @pcontraseña";
-            usuario = db.Query<Usuarios>(sql, new{pmail = usuario.Mail, pcontraseña = usuario.Contraseña});
+            usuario = db.QueryFirstOrDefault<Usuarios>(sql, new{pmail = mail, pcontraseña = contra});
         }
         if(usuario != null)
         return true;

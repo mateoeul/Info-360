@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "5zq8pQKo07+MrABplSSBBN+3rpbIwS5DJAAFfPf3+D7azcKc8HPgdh40g/mrSDctLUzP5xU3ou4Ykoi2l7hf8w==",
-=======
-  "dgSpecHash": "181Q+NvMP/0M620sr4aW9XIVs3x/bkKNYaRClPR2ZqrVspgEskaUZPPzqy2mxmQrBnfXj4fJ8uS9zl4OpVGkvg==",
->>>>>>> de88d923e010ea7f718e7372b07bfea07fc5fa37
   "success": true,
   "projectFilePath": "C:\\Users\\48111117\\Info-360\\Uni..csproj",
   "expectedPackageFiles": [
