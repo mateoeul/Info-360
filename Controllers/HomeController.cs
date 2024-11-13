@@ -13,6 +13,11 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
+
+    /*public IActionResult Index()
+    {
+        return View();
+    }
     public IActionResult InicioSesion()
     {
         return View();
@@ -21,6 +26,13 @@ public class HomeController : Controller
     {
         return View();
     }
+
+    public IActionResult Test()
+    {
+        return View();
+    }*/
+
+    
     public IActionResult Index()
     {
         ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
