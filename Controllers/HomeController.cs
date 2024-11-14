@@ -82,10 +82,10 @@ public class HomeController : Controller
         DB.ActualizarInfoEst(estudiante, nombre, apellido, foto, fechaNac, bio, cursada);
         return RedirectToAction("PerfilEst");
     }
-    public IActionResult Busqueda(string dato, Busqueda busqueda)
+    public IActionResult Busqueda(string dato)
     {
         ViewBag.DatoBuscado = dato;
-        ViewBag.Resultados = DB.Busqueda(dato, busqueda);
+        ViewBag.Resultados = DB.Busqueda(dato);
         return View();
     }
     public IActionResult PerfilEst(int id)

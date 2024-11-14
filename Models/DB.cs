@@ -106,6 +106,7 @@ public class DB
         }
         return preguntas;
     }
+    /*
     public static ResultadoBusqueda Busqueda(string datoIng, Busqueda pbusqueda) 
     {
         ResultadoBusqueda resultados = new ResultadoBusqueda();
@@ -126,7 +127,7 @@ public class DB
             }        
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * FROM Univ WHERE Nombre LIKE @pDatoIng%";
+                string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng%";
                 resultados.Carrerasr = db.Query<Carreras>(sql, new{pDatoIng = datoIng}).ToList();
             }          
             if (resultados.Carrerasr.Count == 0 && resultados.Universidadesr.Count == 0)
@@ -134,6 +135,7 @@ public class DB
             else 
             return resultados;
         }
+        
         else if(pbusqueda.Tipo == 'c') //busca carreras
         {
             using(SqlConnection db = new SqlConnection(_connectionString))
@@ -182,6 +184,21 @@ public class DB
         else
         return false;
     }
-
+*/
+    public static ResultadoBusqueda Busqueda(string datoIng)
+    {
+        ResultadoBusqueda? resultados = null;
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng%";
+            resultados.Universidadesr = db.Query<Universidades>(sql, new{pDatoIng = datoIng}).ToList();
+        }        
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng%";
+            resultados.Carrerasr = db.Query<Carreras>(sql, new{pDatoIng = datoIng}).ToList();
+        }          
+        return resultados;        
+    }
 }
 

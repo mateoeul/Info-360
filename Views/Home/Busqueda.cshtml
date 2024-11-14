@@ -1,20 +1,45 @@
 <section class="busqueda">
+    <h1>Resultados para: "@ViewBag.DatoBuscado"</h1>
 
-<h1> @ViewBag.DatoBuscado</h1>
+    <!-- Mostrar universidades si hay resultados -->
+    @if (ViewBag.Resultados != null && ViewBag.Resultados.Universidadesr != null && ViewBag.Resultados.Universidadesr.Count > 0)
+    {
+        <h2>Universidades</h2>
+        <ul>
+            @foreach (var universidad in ViewBag.Resultados.Universidadesr)
+            {
+                <li>
+                    <h3>@universidad.Nombre</h3>
+                    <img src="@universidad.Foto" alt="Foto de @universidad.Nombre" />
+                    <p>Ubicación: @universidad.Ubicación</p>
 
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No se encontraron universidades para la búsqueda.</p>
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Mostrar carreras si hay resultados -->
+    @if (ViewBag.Resultados != null && ViewBag.Resultados.Carrerasr != null && ViewBag.Resultados.Carrerasr.Count > 0)
+    {
+        <h2>Carreras</h2>
+        <ul>
+            @foreach (var carrera in ViewBag.Resultados.Carrerasr)
+            {
+                <li>
+                    <h3>@carrera.Nombre</h3>
+                    <p>Duración: @carrera.Duracion años</p>
+                    <p>Costo: $@carrera.Costo</p>
+                    <img src="@carrera.Foto" alt="Foto de la carrera @carrera.Nombre" />
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No se encontraron carreras para la búsqueda.</p>
+    }
 </section>
