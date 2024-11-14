@@ -6,37 +6,13 @@
         <div class="preguntas">
             <h3>Seleccioná las actividades de tu interés</h3>
             
-            <div class="opcion">
-                <input type="checkbox" id="opcion1">
-                <label for="opcion1">Organizar eventos o reuniones.</label>
-            </div>
-            
-            <div class="opcion">
-                <input type="checkbox" id="opcion2">
-                <label for="opcion2">Diseñar o crear contenido visual (gráficos, imágenes, videos).</label>
-            </div>
-            
-            <div class="opcion">
-                <input type="checkbox" id="opcion3">
-                <label for="opcion3">Programar o desarrollar aplicaciones y software.</label>
-            </div>
-
-            <div class="opcion">
-                <input type="checkbox" id="opcion1">
-                <label for="opcion1">Organizar eventos o reuniones.</label>
-            </div>
-            
-            <div class="opcion">
-                <input type="checkbox" id="opcion2">
-                <label for="opcion2">Diseñar o crear contenido visual (gráficos, imágenes, videos).</label>
-            </div>
-            
-            <div class="opcion">
-                <input type="checkbox" id="opcion3">
-                <label for="opcion3">Programar o desarrollar aplicaciones y software.</label>
-            </div>
-            
-            <!-- Agrega más opciones aquí según tu base de datos -->
+            @foreach (Preguntas preg in ViewBag.Preguntas)
+            {
+                <div class="opcion">
+                    <input type="checkbox" id="opcion">
+                    <label for="opcion">¿@preg.Descripcion</label>
+                </div>
+            }
         </div>
         
         <div class="progreso">

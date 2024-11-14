@@ -3,7 +3,7 @@ using Dapper;
 
 public class DB
 {
-    private static string _connectionString = @"Server=localhost;DartaBase=Uni;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localHost;DataBase=Uni;Trusted_Connection=True;";
     public static void RegistroEst(Estudiantes estudiante)
     {
         string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, FechaNac, Bio, Cursada) VALUES (@pnombre, @papellido, @pfoto, @pfnac, @pbio, @pcursada, @pidusuario)";
@@ -126,7 +126,7 @@ public class DB
             }        
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng%";
+                string sql = "SELECT * FROM Univ WHERE Nombre LIKE @pDatoIng%";
                 resultados.Carrerasr = db.Query<Carreras>(sql, new{pDatoIng = datoIng}).ToList();
             }          
             if (resultados.Carrerasr.Count == 0 && resultados.Universidadesr.Count == 0)

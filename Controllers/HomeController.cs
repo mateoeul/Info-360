@@ -35,11 +35,11 @@ public class HomeController : Controller
     
     public IActionResult Index()
     {
-        ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
+        /*ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
         if(ViewBag.User is null)
         {
             return RedirectToAction("Login", "Auth");
-        }
+        }*/
         return View();
     }
     public IActionResult Registro(char tipo)
@@ -84,7 +84,8 @@ public class HomeController : Controller
     }
     public IActionResult Busqueda(string dato, Busqueda busqueda)
     {
-        ViewBag.resultados = DB.Busqueda(dato, busqueda);
+        ViewBag.DatoBuscado = dato;
+        ViewBag.Resultados = DB.Busqueda(dato, busqueda);
         return View();
     }
     public IActionResult PerfilEst(int id)
