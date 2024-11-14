@@ -76,7 +76,7 @@ public class DB
         }
         return carrera;
     }
-    public static Becas BecasXUni(int idUni)
+    public static List<Becas> BecasXUni(int idUni)
     {
         List<Becas> becas = new List<Becas>();
         using(SqlConnection db = new SqlConnection(_connectionString))
@@ -86,7 +86,7 @@ public class DB
         }
         return becas;
     }
-    public static Condiciones CondicionesXUni(int idUni)
+    public static List<Condiciones> CondicionesXUni(int idUni)
     {
         List<Condiciones> condiciones = new List<Condiciones>();
         using(SqlConnection db = new SqlConnection(_connectionString))
@@ -96,7 +96,7 @@ public class DB
         }
         return condiciones;
     }
-    public List<Preguntas> ObtenerPreguntasTest()
+    public static List<Preguntas> ObtenerPreguntasTest()
     {
         List<Preguntas> preguntas = new List<Preguntas>();
         using(SqlConnection db = new SqlConnection(_connectionString))
@@ -106,7 +106,7 @@ public class DB
         }
         return preguntas;
     }
-    public ResultadoBusqueda Busqueda(string datoIng, Busqueda pbusqueda) 
+    public static ResultadoBusqueda Busqueda(string datoIng, Busqueda pbusqueda) 
     {
         ResultadoBusqueda resultados = new ResultadoBusqueda();
         resultados = null;
@@ -122,12 +122,12 @@ public class DB
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng%";
-                resultados.Universidadesr = db.Query<ResultadoBusqueda>(sql, new{pDatoIng = datoIng}).ToList();
+                resultados.Universidadesr = db.Query<Universidades>(sql, new{pDatoIng = datoIng}).ToList();
             }        
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng%";
-                resultados.Carrerasr = db.Query<ResultadoBusqueda>(sql, new{pDatoIng = datoIng}).ToList();
+                resultados.Carrerasr = db.Query<Carreras>(sql, new{pDatoIng = datoIng}).ToList();
             }          
             if (resultados.Carrerasr.Count == 0 && resultados.Universidadesr.Count == 0)
             return null;
@@ -139,7 +139,7 @@ public class DB
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT Id FROM Carreras WHERE Nombre LIKE @pDatoIng% AND Valoraciones >= @pvaloraciones AND Costo >= @pmin AND Costo <= @pmax";
-                resultados.Carrerasr = db.Query<ResultadoBusqueda>(sql, new{pmin = pbusqueda.PrecioMin, pmax = pbusqueda.PrecioMax, pvaloraciones = pbusqueda.Valoraciones}).ToList();
+                resultados.Carrerasr = db.Query<Carreras>(sql, new{pmin = pbusqueda.PrecioMin, pmax = pbusqueda.PrecioMax, pvaloraciones = pbusqueda.Valoraciones}).ToList();
             }
         }
         else if (pbusqueda.Tipo == 'u' && pbusqueda.TipoUni == null ) //busca universidades de todo tipo
@@ -147,7 +147,7 @@ public class DB
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT Id FROM Universidades WHERE Nombre LIKE @pDatoIng% AND Valoraciones >= @pvaloraciones";
-                resultados.Universidadesr = db.Query<ResultadoBusqueda>(sql, new{pDatoIng = datoIng, pvaloraciones = pbusqueda.Valoraciones}).ToList();
+                resultados.Universidadesr = db.Query<Universidades>(sql, new{pDatoIng = datoIng, pvaloraciones = pbusqueda.Valoraciones}).ToList();
             }
             if (resultados.Universidadesr.Count == 0)
             return null;
@@ -159,17 +159,16 @@ public class DB
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT Id FROM Universidades WHERE Nombre LIKE @pDatoIng% AND Tipo = @ptipo AND Valoraciones >= @pvaloraciones";
-                resultados.Universidadesr = db.Query<ResultadoBusqueda>(sql, new{pDatoIng = datoIng, ptipo = pbusqueda.Tipo, pvaloraciones = pbusqueda.Valoraciones}).ToList();
+                resultados.Universidadesr = db.Query<Universidades>(sql, new{pDatoIng = datoIng, ptipo = pbusqueda.Tipo, pvaloraciones = pbusqueda.Valoraciones}).ToList();
             }
             if (resultados.Universidadesr.Count == 0)
             return null;
             else 
             return resultados;
         }
-        else
         return resultados;
     }
-    public bool VerificarLogin(string mail, string contra)
+    public static bool VerificarLogin(string mail, string contra)
     {
         Usuarios usuario = null;
         usuario = null;

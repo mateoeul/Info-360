@@ -3,7 +3,7 @@ using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Uni_.Models;
 
-namespace test_session.Controllers;
+namespace Uni_.Controllers;
 
 public class AuthController : Controller
 {
@@ -37,7 +37,6 @@ public class AuthController : Controller
             return View("Login");
         }
     }
-
     public IActionResult Logout()
     {
         HttpContext.Session.Remove("user");
