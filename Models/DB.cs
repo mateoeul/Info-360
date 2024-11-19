@@ -187,17 +187,25 @@ public class DB
 */
     public static ResultadoBusqueda Busqueda(string datoIng)
     {
-        ResultadoBusqueda? resultados = null;
+        // Inicializar el objeto antes de su uso
+        ResultadoBusqueda resultados = new ResultadoBusqueda 
+        {
+            Universidadesr = new List<Universidades>(),
+            Carrerasr = new List<Carreras>()
+        };
+
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng%";
-            resultados.Universidadesr = db.Query<Universidades>(sql, new{pDatoIng = datoIng}).ToList();
+            string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng";
+            resultados.Universidadesr = db.Query<Universidades>(sql, new { pDatoIng = datoIng + "%" }).ToList();
         }        
+
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng%";
-            resultados.Carrerasr = db.Query<Carreras>(sql, new{pDatoIng = datoIng}).ToList();
+            string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng";
+            resultados.Carrerasr = db.Query<Carreras>(sql, new { pDatoIng = datoIng + "%" }).ToList();
         }          
+
         return resultados;        
     }
 }
