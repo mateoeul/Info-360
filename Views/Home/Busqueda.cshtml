@@ -1,5 +1,7 @@
 <section class="busqueda">
-    <h1>Resultados para: "@ViewBag.DatoBuscado"</h1>
+    <h6>Resultados para: </h6>
+    <h1>"@ViewBag.DatoBuscado"</h1>
+    <hr>
 
     <!-- Mostrar universidades si hay resultados -->
     @if (ViewBag.Resultados != null && ViewBag.Resultados.Universidadesr != null && ViewBag.Resultados.Universidadesr.Count > 0)
@@ -9,7 +11,7 @@
             @foreach (var universidad in ViewBag.Resultados.Universidadesr)
             {
                 <li>
-                    <h3>@universidad.Nombre</h3>
+                    <h4>@universidad.Nombre</h4>
                     <img src="@universidad.Foto" alt="Foto de @universidad.Nombre" />
                     <p>Ubicación: @universidad.Ubicación</p>
 
@@ -22,6 +24,7 @@
         <p>No se encontraron universidades para la búsqueda.</p>
     }
 
+    <hr>
     <!-- Mostrar carreras si hay resultados -->
     @if (ViewBag.Resultados != null && ViewBag.Resultados.Carrerasr != null && ViewBag.Resultados.Carrerasr.Count > 0)
     {

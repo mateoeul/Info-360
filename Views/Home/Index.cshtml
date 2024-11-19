@@ -4,12 +4,14 @@
 <section class="index">
     <div class="buscador-index"> 
         <h1>Uni.</h1>
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Buscar...">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M10 2a8 8 0 1 0 5.33 14.73l5.65 5.64 1.41-1.41-5.64-5.65A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/>
-            </svg>
-        </div>
+                    <form asp-action="Busqueda" method="post" class="search-box">
+                        <input type="text" name="dato" placeholder="Buscar..."  autocomplete="off"/>
+                        <button type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M10 2a8 8 0 1 0 5.33 14.73l5.65 5.64 1.41-1.41-5.64-5.65A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/>
+                            </svg>
+                        </button>
+                    </form>
     </div>
 
     <section class="universidades-index">

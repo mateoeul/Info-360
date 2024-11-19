@@ -203,7 +203,7 @@ public class DB
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng";
-            resultados.Carrerasr = db.Query<Carreras>(sql, new { pDatoIng = datoIng + "%" }).ToList();
+            resultados.Carrerasr = db.Query<Carreras>(sql, new {pDatoIng = "%" + datoIng + "%" }).ToList();
         }          
 
         return resultados;        
