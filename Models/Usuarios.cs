@@ -9,7 +9,6 @@ public class Usuarios
     public string Mail {get; set;}
     public string Contraseña {get; set;}
     public int IdExterno {get; set;}
-/*
     public Usuarios(string mail, string contra)
     {
         Mail = mail;
@@ -29,5 +28,4 @@ public class Usuarios
         }
         return JsonSerializer.Deserialize<Usuarios>(json);
     }
-    */
 }

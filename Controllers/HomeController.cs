@@ -30,17 +30,6 @@ public class HomeController : Controller
     public IActionResult Test()
     {
         return View();
-    }*/
-
-    
-    public IActionResult Index()
-    {
-        /*ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
-        if(ViewBag.User is null)
-        {
-            return RedirectToAction("Login", "Auth");
-        }*/
-        return View();
     }
     public IActionResult Registro(char tipo)
     {
@@ -59,12 +48,6 @@ public class HomeController : Controller
             return View("Index");
         }
     }
-    public IActionResult RegistroEst(Estudiantes estudiante, Usuarios usuario)
-    {
-        DB.RegistroEst(estudiante);
-        DB.RegistroUsuario(usuario);
-        return RedirectToAction("Index");
-    }
     public IActionResult RegistroProf(Profesores profesor, Usuarios usuario)
     {
         DB.RegistroProf(profesor);
@@ -75,6 +58,24 @@ public class HomeController : Controller
     {
         DB.RegistroUni(universidad);
         DB.RegistroUsuario(usuario);
+        return RedirectToAction("Index");
+    }*/
+    public IActionResult Index()
+    {
+        ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
+        if(ViewBag.User is null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+        return View();
+    }
+    [HttpPost]
+    public IActionResult Registro(Estudiantes estudiante, Usuarios usuario)
+    {
+        DB.RegistroUsuario(usuario); 
+        int idUsuario = DB.ObtenerIdUsuario(usuario.Mail); 
+        estudiante.IdUsuario = idUsuario.ToString(); 
+        DB.RegistroEst(estudiante);
         return RedirectToAction("Index");
     }
     public IActionResult ActualizarInfo(Estudiantes estudiante, string nombre, string apellido, string foto, string fechaNac, string bio, string cursada)

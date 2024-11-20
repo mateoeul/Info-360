@@ -4,16 +4,7 @@ using Dapper;
 public class DB
 {
     private static string _connectionString = @"Server=localHost;DataBase=Uni;Trusted_Connection=True;";
-    public static void RegistroEst(Estudiantes estudiante)
-    {
-        string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, FechaNac, Bio, Cursada) VALUES (@pnombre, @papellido, @pfoto, @pfnac, @pbio, @pcursada, @pidusuario)";
-        using(SqlConnection db = new SqlConnection(_connectionString))
-        {
-            db.Execute(sql, new{pnombre = estudiante.Nombre, papellido = estudiante.Apellido, pfoto = estudiante.Foto, pfnac = estudiante.FechaNac, pbio = estudiante.Bio, pcursada = estudiante.Cursada, pidusuario = estudiante.IdUsuario});
-        }
-        
-    }
-    public static void RegistroUni(Universidades universidad)
+    /*public static void RegistroUni(Universidades universidad)
     {
         string sql = "INSERT INTO Universidades (Nombre, Foto, Ubicacion, Tipo, Ubicacion, Descripcion, Valoracion) VALUES (@pnombre, @pfoto, @pubi, @ptipo, @pdescripcion, @pidusuario)";
         using(SqlConnection db = new SqlConnection(_connectionString))
@@ -29,15 +20,34 @@ public class DB
         {
             db.Execute(sql, new{pnombre = profesor.Nombre, papellido = profesor.Apellido, pfoto = profesor.Foto, pfnac = profesor.FechaNac, pbio = profesor.Bio, pidusuario = profesor.IdUsuario});
         }
+    }*/
+    public static void RegistroEst(Estudiantes estudiante)
+    {
+        string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, FechaNac, Bio, Cursada) VALUES (@pnombre, @papellido, @pfoto, @pfnac, @pbio, @pcursada, @pidusuario)";
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            db.Execute(sql, new{pnombre = estudiante.Nombre, papellido = estudiante.Apellido, pfoto = estudiante.Foto, pfnac = estudiante.FechaNac, pbio = estudiante.Bio, pcursada = estudiante.Cursada, pidusuario = estudiante.IdUsuario});
+        }
+        
     }
     public static void RegistroUsuario(Usuarios usuario)
     {
-        string sql = "INSERT INTO Usuario (NombreUsuario, Tipo, Contraseña, Mail, IdExterno) VALUES (@pusuario, @ptipo, @pcontraseña, @pmail)";
+        string sql = "INSERT INTO Usuario (NombreUsuario, Tipo, Contraseña, Mail) VALUES (@pusuario, @ptipo, @pcontraseña, @pmail)";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             db.Execute(sql, new{ptipo = usuario.Tipo, pcontraseña = usuario.Contraseña, pmail = usuario.Mail});
         }
     }  
+    public static int ObtenerIdUsuario(string mail)
+    {
+        int idUsuario = 0;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT Id FROM Usuarios WHERE Mail = @pmail";
+            idUsuario = db.QueryFirstOrDefault<int>(sql, new { pmail = mail });
+        }
+        return idUsuario;
+    }
     public static Estudiantes MostrarInfoEst(int pId)
     {
         Estudiantes estudiante = null;
@@ -106,6 +116,36 @@ public class DB
         }
         return preguntas;
     }
+        public static ResultadoBusqueda Busqueda(string datoIng)
+    {
+        ResultadoBusqueda resultados = new ResultadoBusqueda 
+        {
+            Universidadesr = new List<Universidades>(),
+            Carrerasr = new List<Carreras>()
+        };
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng";
+            resultados.Universidadesr = db.Query<Universidades>(sql, new { pDatoIng = datoIng + "%" }).ToList();
+            sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng";
+            resultados.Carrerasr = db.Query<Carreras>(sql, new {pDatoIng = "%" + datoIng + "%" }).ToList();
+        }        
+        return resultados;        
+    }
+    public static bool VerificarLogin(string mail, string contra)
+    {
+        Usuarios usuario = null;
+        usuario = null;
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT Mail, Contraseña FROM Usuarios WHERE Mail = @pmail AND Contraseña = @pcontraseña";
+            usuario = db.QueryFirstOrDefault<Usuarios>(sql, new{pmail = mail, pcontraseña = contra});
+        }
+        if(usuario != null)
+        return true;
+        else
+        return false;
+    }
     /*
     public static ResultadoBusqueda Busqueda(string datoIng, Busqueda pbusqueda) 
     {
@@ -170,43 +210,8 @@ public class DB
         }
         return resultados;
     }
-    public static bool VerificarLogin(string mail, string contra)
-    {
-        Usuarios usuario = null;
-        usuario = null;
-        using(SqlConnection db = new SqlConnection(_connectionString))
-        {
-            string sql = "SELECT Mail, Contraseña FROM Usuarios WHERE Mail = @pmail AND Contraseña = @pcontraseña";
-            usuario = db.QueryFirstOrDefault<Usuarios>(sql, new{pmail = mail, pcontraseña = contra});
-        }
-        if(usuario != null)
-        return true;
-        else
-        return false;
-    }
+
 */
-    public static ResultadoBusqueda Busqueda(string datoIng)
-    {
-        // Inicializar el objeto antes de su uso
-        ResultadoBusqueda resultados = new ResultadoBusqueda 
-        {
-            Universidadesr = new List<Universidades>(),
-            Carrerasr = new List<Carreras>()
-        };
 
-        using(SqlConnection db = new SqlConnection(_connectionString))
-        {
-            string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng";
-            resultados.Universidadesr = db.Query<Universidades>(sql, new { pDatoIng = datoIng + "%" }).ToList();
-        }        
-
-        using(SqlConnection db = new SqlConnection(_connectionString))
-        {
-            string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng";
-            resultados.Carrerasr = db.Query<Carreras>(sql, new {pDatoIng = "%" + datoIng + "%" }).ToList();
-        }          
-
-        return resultados;        
-    }
 }
 

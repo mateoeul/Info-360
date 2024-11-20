@@ -1,4 +1,4 @@
-/*using System.Diagnostics;
+using System.Diagnostics;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Uni_.Models;
@@ -44,4 +44,4 @@ public class AuthController : Controller
     }
 
 }
-*/
+
