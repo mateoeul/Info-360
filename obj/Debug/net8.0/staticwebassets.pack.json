@@ -89,7 +89,15 @@
       "PackagePath": "staticwebassets\\img\\x.png"
     },
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\48111117\\Info-360\\wwwroot\\js\\perfil.js",
+=======
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\js\\comparacion.js",
+      "PackagePath": "staticwebassets\\js\\comparacion.js"
+    },
+    {
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\js\\perfil.js",
+>>>>>>> 7462f77893a0f85f5da465eab3d6dcc4ae0ca769
       "PackagePath": "staticwebassets\\js\\perfil.js"
     },
     {

@@ -14,6 +14,10 @@
                     <h4>@universidad.Nombre</h4>
                     <img src="@universidad.Foto" alt="Foto de @universidad.Nombre" />
                     <p>Ubicación: @universidad.Ubicación</p>
+                    
+                    <input type="checkbox" class="compare-checkbox" 
+                       data-id="@universidad.Id" data-nombre="@universidad.Nombre" data-logo="@universidad.Foto">
+                    <label>Comparar</label>
 
                 </li>
             }
@@ -45,4 +49,25 @@
     {
         <p>No se encontraron carreras para la búsqueda.</p>
     }
+
+
 </section>
+
+
+
+
+    <div id="comparison-bar" class="comparison-bar hidden">
+        <div id="comparison-list" class="comparison-list">
+            <!-- Aquí se agregarán las universidades seleccionadas dinámicamente -->
+        </div>
+        <div class="comparison-bar" style="display: none;">
+        
+        <div class="comparison-list"></div>
+            <div class="comparison-buttons">
+                <button onclick="compareUniversities()">Comparar por universidad</button>
+                <button onclick="compareCareers()">Comparar por carrera</button>
+            </div>
+        </div>
+    </div>
+
+<script src="../js/comparacion.js"></script>

@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "LExuolwEpfaHCjXcO3ZsdZnkCPyXtmNtWQElJnlIt1Q=",
+=======
+  "Hash": "iKUpCXezh9vb0caEJOz1ERj0no/zkPLrQ0/IB2gZQc0=",
+>>>>>>> 7462f77893a0f85f5da465eab3d6dcc4ae0ca769
   "Source": "Uni.",
   "BasePath": "_content/Uni.",
   "Mode": "Default",
@@ -435,7 +439,30 @@
       "OriginalItemSpec": "wwwroot\\img\\x.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\48111117\\Info-360\\wwwroot\\js\\perfil.js",
+=======
+      "Identity": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\js\\comparacion.js",
+      "SourceId": "Uni.",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\",
+      "BasePath": "_content/Uni.",
+      "RelativePath": "js/comparacion.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\comparacion.js"
+    },
+    {
+      "Identity": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\js\\perfil.js",
+>>>>>>> 7462f77893a0f85f5da465eab3d6dcc4ae0ca769
       "SourceId": "Uni.",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\48111117\\Info-360\\wwwroot\\",
