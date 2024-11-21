@@ -14,23 +14,7 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    /*public IActionResult Index()
-    {
-        return View();
-    }
-    public IActionResult InicioSesion()
-    {
-        return View();
-    }
-    public IActionResult Perfil()
-    {
-        return View();
-    }
-
-    public IActionResult Test()
-    {
-        return View();
-    }
+    /*
     public IActionResult Registro(char tipo)
     {
         switch(tipo)
@@ -60,6 +44,10 @@ public class HomeController : Controller
         DB.RegistroUsuario(usuario);
         return RedirectToAction("Index");
     }*/
+    public IActionResult Registrarse()
+    {
+        return View("Registro");
+    }
     public IActionResult Index()
     {
         ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
@@ -85,6 +73,7 @@ public class HomeController : Controller
     }
     public IActionResult Busqueda(string dato)
     {
+    
         ViewBag.DatoBuscado = dato;
         ViewBag.Resultados = DB.Busqueda(dato);
         return View();

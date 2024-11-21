@@ -8,7 +8,7 @@ public class Usuarios
     public char Tipo {get; set;}
     public string Mail {get; set;}
     public string Contraseña {get; set;}
-    public int IdExterno {get; set;}
+
     public Usuarios(string mail, string contra)
     {
         Mail = mail;
