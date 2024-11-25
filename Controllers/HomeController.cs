@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using System.Text;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Uni_.Models;
 
@@ -44,10 +44,7 @@ public class HomeController : Controller
         DB.RegistroUsuario(usuario);
         return RedirectToAction("Index");
     }*/
-    public IActionResult Registrarse()
-    {
-        return View("Registro");
-    }
+
     public IActionResult Index()
     {
         ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
@@ -57,18 +54,57 @@ public class HomeController : Controller
         }
         return View();
     }
-    [HttpPost]
-    public IActionResult Registro(Estudiantes estudiante, Usuarios usuario)
+
+    [HttpGet]
+    public IActionResult RegistrarUsuario()
     {
-        DB.RegistroUsuario(usuario); 
-        int idUsuario = DB.ObtenerIdUsuario(usuario.Mail); 
-        estudiante.IdUsuario = idUsuario.ToString(); 
-        DB.RegistroEst(estudiante);
-        return RedirectToAction("Index");
+        // Crear un modelo vacío de usuario
+        var usuario = new Usuarios();
+        return View(usuario);
     }
-    public IActionResult ActualizarInfo(Estudiantes estudiante, string nombre, string apellido, string foto, string fechaNac, string bio, string cursada)
+
+    [HttpPost]
+    public IActionResult RegistrarUsuario(Usuarios usuario)
     {
-        DB.ActualizarInfoEst(estudiante, nombre, apellido, foto, fechaNac, bio, cursada);
+        // Aquí puedes validar el usuario (si lo deseas), luego lo guardas en la sesión
+        HttpContext.Session.SetString("UsuarioTemp", JsonSerializer.Serialize(usuario));
+
+        // Redirige al siguiente paso
+        return RedirectToAction("RegistrarEstudiante");
+    }
+    
+    [HttpPost]
+    public IActionResult RegistrarEstudiante(Estudiantes estudiante)
+    {
+        // Recuperar el usuario de la sesión
+        string? usuarioJson = HttpContext.Session.GetString("UsuarioTemp");
+
+        if (usuarioJson is null)
+        {
+            // Si no existe el usuario, redirigir al primer paso
+            return RedirectToAction("RegistrarUsuario");    
+        }
+
+        Usuarios usuario = JsonSerializer.Deserialize<Usuarios>(usuarioJson);
+
+        // Asocia el usuario al estudiante (si es necesario)
+        estudiante.IdUsuario = usuario.Id;
+
+        // Guarda al usuario y al estudiante en la base de datos
+        DB.RegistroUsuario(usuario);
+        DB.RegistroEst(estudiante);
+
+        // Limpiar la sesión
+        HttpContext.Session.Remove("UsuarioTemp");
+
+        // Redirigir a login
+        return RedirectToAction("Login");
+    }
+
+
+    public IActionResult ActualizarInfo(Estudiantes estudiante, string nombre, string apellido, string foto, DateOnly fechaNac, string carrera, string cursada)
+    {
+        DB.ActualizarInfoEst(estudiante, nombre, apellido, foto, fechaNac, carrera, cursada);
         return RedirectToAction("PerfilEst");
     }
     public IActionResult Busqueda(string dato)

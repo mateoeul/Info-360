@@ -1,0 +1,33 @@
+@model Estudiantes
+
+<section class="register-container">
+    <div class="register-box">
+        <h1>Completar Datos del Estudiante</h1>
+        
+        <form asp-action="RegistrarEstudiante" method="post">
+            <div class="form-group">
+                <label for="Nombre">Nombre</label>
+                <input type="text" id="Nombre" name="Nombre" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Apellido">Apellido</label>
+                <input type="text" id="Apellido" name="Apellido" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="FechaNac">Fecha de Nacimiento</label>
+                <input type="date" id="FechaNac" name="FechaNac" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="Carrera">Carrera</label>
+                <input type="text" id="Carrera" name="Carrera" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+        </form>
+    </div>
+</section>

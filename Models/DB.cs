@@ -23,21 +23,43 @@ public class DB
     }*/
     public static void RegistroEst(Estudiantes estudiante)
     {
-        string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, FechaNac, Bio, Cursada) VALUES (@pnombre, @papellido, @pfoto, @pfnac, @pbio, @pcursada, @pidusuario)";
-        using(SqlConnection db = new SqlConnection(_connectionString))
-        {
-            db.Execute(sql, new{pnombre = estudiante.Nombre, papellido = estudiante.Apellido, pfoto = estudiante.Foto, pfnac = estudiante.FechaNac, pbio = estudiante.Bio, pcursada = estudiante.Cursada, pidusuario = estudiante.IdUsuario});
-        }
+        // Asegúrate de que la fecha de nacimiento sea válida si existe
+        DateTime? fechaNac = estudiante.FechaNac.HasValue 
+            ? estudiante.FechaNac.Value.ToDateTime(new TimeOnly(0, 0)) 
+            : (DateTime?)null;
+
+        string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, FechaNac, Carrera, IdUsuario) " +
+                    "VALUES (@pnombre, @papellido, @pfoto, @pfnac, @pcarrera, @pidusuario)";
         
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            db.Execute(sql, new
+            {
+                pnombre = estudiante.Nombre,
+                papellido = estudiante.Apellido,
+                pfoto = estudiante.Foto ?? (object)DBNull.Value, // Si no tiene foto, se asigna NULL
+                pfnac = fechaNac,  // Asignación de fecha nullable
+                pcarrera = estudiante.Carrera ?? (object)DBNull.Value,  // Si no tiene carrera, se asigna NULL
+                pidusuario = estudiante.IdUsuario
+            });
+        }
     }
-    public static void RegistroUsuario(Usuarios usuario)
+
+
+
+
+
+    public static int RegistroUsuario(Usuarios usuario)
     {
-        string sql = "INSERT INTO Usuario (NombreUsuario, Tipo, Contraseña, Mail) VALUES (@pusuario, @ptipo, @pcontraseña, @pmail)";
+        string sql = "INSERT INTO Usuarios (Tipo, NombreUsuario, Mail ,Contraseña) OUTPUT INSERTED.Id VALUES ( @ptipo, @pnombreUsuario, @pmail,@pcontraseña)";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            db.Execute(sql, new{ptipo = usuario.Tipo, pcontraseña = usuario.Contraseña, pmail = usuario.Mail});
+            // Ejecuta la consulta y obtiene el ID insertado
+            int userId = db.ExecuteScalar<int>(sql, new {ptipo = usuario.Tipo, pnombreUsuario = usuario.NombreUsuario, pmail = usuario.Mail, pcontraseña = usuario.Contraseña });
+            return userId;
         }
-    }  
+    }
+
     public static int ObtenerIdUsuario(string mail)
     {
         int idUsuario = 0;
@@ -58,12 +80,12 @@ public class DB
         }
         return estudiante;
     }
-    public static void ActualizarInfoEst(Estudiantes estudiante, string pnombre, string papellido, string pfoto, string pfnac, string pbio, string pcursada)
+    public static void ActualizarInfoEst(Estudiantes estudiante, string pnombre, string pfoto, string papellido, DateOnly pfnac, string pcarrera, string pcursada)
     {
-        string sql = "UPDATE Estudiantes SET Nombre = @pnombre, Apellido = @papellido, Foto = @pfoto, FechaNac = @pfnac, Bio = @pbio, Cursada = @pcursada WHERE Id = @pId";
+        string sql = "UPDATE Estudiantes SET Nombre = @pnombre, Apellido = @papellido, Foto = @pfoto, FechaNac = @pfnac, Carrera = @pcarrera, Cursada = @pcursada WHERE Id = @pId";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            db.Execute(sql, new{pnombre = estudiante.Nombre, papellido = estudiante.Apellido, pfoto = estudiante.Foto, pfnac = estudiante.FechaNac, pbio = estudiante.Bio, pcursada = estudiante.Cursada});
+            db.Execute(sql, new{pnombre = estudiante.Nombre, papellido = estudiante.Apellido, pfoto = estudiante.Foto, pfnac = estudiante.FechaNac, pcarrera = estudiante.Carrera, pcursada = estudiante.Cursada});
         }
     }
     public static Universidades MostrarInfoUni(int pId)

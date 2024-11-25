@@ -6,8 +6,11 @@ public class Usuarios
 {
     public int Id {get; set;}
     public char Tipo {get; set;}
+    public string? NombreUsuario{get; set;}
     public string Mail {get; set;}
     public string Contraseña {get; set;}
+
+     public Usuarios() {}
 
     public Usuarios(string mail, string contra)
     {
