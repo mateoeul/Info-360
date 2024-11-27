@@ -3,7 +3,9 @@ using Dapper;
 
 public class DB
 {
-    private static string _connectionString = @"Server=localHost;DataBase=Uni;Trusted_Connection=True;";
+    //private static string _connectionString = @"Server=localHost;DataBase=Uni;Trusted_Connection=True;";
+    private static string _connectionString =  @"Server=BANGHODEMATEO\SQLEXPRESS;DataBase=Uni;Trusted_Connection=True;";
+
     /*public static void RegistroUni(Universidades universidad)
     {
         string sql = "INSERT INTO Universidades (Nombre, Foto, Ubicacion, Tipo, Ubicacion, Descripcion, Valoracion) VALUES (@pnombre, @pfoto, @pubi, @ptipo, @pdescripcion, @pidusuario)";
@@ -21,29 +23,35 @@ public class DB
             db.Execute(sql, new{pnombre = profesor.Nombre, papellido = profesor.Apellido, pfoto = profesor.Foto, pfnac = profesor.FechaNac, pbio = profesor.Bio, pidusuario = profesor.IdUsuario});
         }
     }*/
-    public static void RegistroEst(Estudiantes estudiante)
+public static void RegistroEst(Estudiantes estudiante)
+{
+    if (estudiante.IdUsuario == null || estudiante.IdUsuario == 0)
     {
-        // Asegúrate de que la fecha de nacimiento sea válida si existe
-        DateTime? fechaNac = estudiante.FechaNac.HasValue 
-            ? estudiante.FechaNac.Value.ToDateTime(new TimeOnly(0, 0)) 
-            : (DateTime?)null;
-
-        string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, FechaNac, Carrera, IdUsuario) " +
-                    "VALUES (@pnombre, @papellido, @pfoto, @pfnac, @pcarrera, @pidusuario)";
-        
-        using (SqlConnection db = new SqlConnection(_connectionString))
-        {
-            db.Execute(sql, new
-            {
-                pnombre = estudiante.Nombre,
-                papellido = estudiante.Apellido,
-                pfoto = estudiante.Foto ?? (object)DBNull.Value, // Si no tiene foto, se asigna NULL
-                pfnac = fechaNac,  // Asignación de fecha nullable
-                pcarrera = estudiante.Carrera ?? (object)DBNull.Value,  // Si no tiene carrera, se asigna NULL
-                pidusuario = estudiante.IdUsuario
-            });
-        }
+        throw new InvalidOperationException("IdUsuario no puede ser NULL o 0.");
     }
+
+    DateTime? fechaNac = estudiante.FechaNac.HasValue 
+        ? estudiante.FechaNac.Value.ToDateTime(new TimeOnly(0, 0)) 
+        : (DateTime?)null;
+
+    string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, FechaNac, Carrera, IdUsuario) " +
+                "VALUES (@pnombre, @papellido, @pfoto, @pfnac, @pcarrera, @pidusuario)";
+    
+    using (SqlConnection db = new SqlConnection(_connectionString))
+    {
+        db.Execute(sql, new
+        {
+            pnombre = estudiante.Nombre,
+            papellido = estudiante.Apellido,
+            pfoto = estudiante.Foto ?? (object)DBNull.Value,
+            pfnac = fechaNac,
+            pcarrera = estudiante.Carrera ?? (object)DBNull.Value,
+            pidusuario = estudiante.IdUsuario // Asegúrate de que este valor sea correcto
+        });
+    }
+}
+
+
 
 
 
@@ -51,14 +59,22 @@ public class DB
 
     public static int RegistroUsuario(Usuarios usuario)
     {
-        string sql = "INSERT INTO Usuarios (Tipo, NombreUsuario, Mail ,Contraseña) OUTPUT INSERTED.Id VALUES ( @ptipo, @pnombreUsuario, @pmail,@pcontraseña)";
+        string sql = "INSERT INTO Usuarios (Tipo, NombreUsuario, Mail ,Contraseña) OUTPUT INSERTED.Id VALUES ( @ptipo, @pnombreUsuario, @pmail, @pcontraseña)";
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
+            db.Open();
             // Ejecuta la consulta y obtiene el ID insertado
-            int userId = db.ExecuteScalar<int>(sql, new {ptipo = usuario.Tipo, pnombreUsuario = usuario.NombreUsuario, pmail = usuario.Mail, pcontraseña = usuario.Contraseña });
+            int userId = db.ExecuteScalar<int>(sql, new 
+            {
+                ptipo = usuario.Tipo,
+                pnombreUsuario = usuario.NombreUsuario,
+                pmail = usuario.Mail,
+                pcontraseña = usuario.Contraseña
+            });
             return userId;
         }
     }
+
 
     public static int ObtenerIdUsuario(string mail)
     {
@@ -138,6 +154,19 @@ public class DB
         }
         return preguntas;
     }
+
+    public static List<Carreras> ObtenerCarreras()
+    {
+        List<Carreras> carreras = new List<Carreras>();
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Carreras";
+            carreras = db.Query<Carreras>(sql).ToList();
+        }
+        return carreras;
+    }
+
+
         public static ResultadoBusqueda Busqueda(string datoIng)
     {
         ResultadoBusqueda resultados = new ResultadoBusqueda 
@@ -148,7 +177,7 @@ public class DB
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng";
-            resultados.Universidadesr = db.Query<Universidades>(sql, new { pDatoIng = datoIng + "%" }).ToList();
+            resultados.Universidadesr = db.Query<Universidades>(sql, new {pDatoIng = "%" + datoIng + "%" }).ToList();
             sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng";
             resultados.Carrerasr = db.Query<Carreras>(sql, new {pDatoIng = "%" + datoIng + "%" }).ToList();
         }        

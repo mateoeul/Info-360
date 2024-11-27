@@ -1,27 +1,29 @@
 <section class="busqueda">
     <h6>Resultados para: </h6>
-    <h1>"@ViewBag.DatoBuscado"</h1>
+    <h2>"@ViewBag.DatoBuscado"</h2>
     <hr>
 
     <!-- Mostrar universidades si hay resultados -->
+    <h2>Universidades</h2>
     @if (ViewBag.Resultados != null && ViewBag.Resultados.Universidadesr != null && ViewBag.Resultados.Universidadesr.Count > 0)
-    {
-        <h2>Universidades</h2>
-        <ul>
+    {   
+        <div class="contenedor-busqueda">
             @foreach (var universidad in ViewBag.Resultados.Universidadesr)
-            {
-                <li>
-                    <h4>@universidad.Nombre</h4>
-                    <img src="@universidad.Foto" alt="Foto de @universidad.Nombre" />
-                    <p>Ubicación: @universidad.Ubicación</p>
+            {   
+                <div class="resultados-universidades">
+                    <img class="foto-facultades" src="@universidad.Foto" alt="Foto de @universidad.Nombre" />
+                    <div class="perfil-universidad">
+                        <h6>@universidad.Nombre</h6>
+                        <p>Ubicación: @universidad.Ubicación</p>
+                        
+                        <input type="checkbox" class="compare-checkbox" 
+                            data-id="@universidad.Id" data-nombre="@universidad.Nombre" data-logo="@universidad.Foto">
+                        <label>Comparar</label>
+                    </div>
+                </div>
+            }          
                     
-                    <input type="checkbox" class="compare-checkbox" 
-                       data-id="@universidad.Id" data-nombre="@universidad.Nombre" data-logo="@universidad.Foto">
-                    <label>Comparar</label>
-
-                </li>
-            }
-        </ul>
+        </div>
     }
     else
     {
@@ -30,20 +32,24 @@
 
     <hr>
     <!-- Mostrar carreras si hay resultados -->
+    <h2>Carreras</h2>
     @if (ViewBag.Resultados != null && ViewBag.Resultados.Carrerasr != null && ViewBag.Resultados.Carrerasr.Count > 0)
     {
-        <h2>Carreras</h2>
-        <ul>
-            @foreach (var carrera in ViewBag.Resultados.Carrerasr)
-            {
-                <li>
-                    <h3>@carrera.Nombre</h3>
-                    <p>Duración: @carrera.Duracion años</p>
-                    <p>Costo: $@carrera.Costo</p>
-                    <img src="@carrera.Foto" alt="Foto de la carrera @carrera.Nombre" />
-                </li>
-            }
-        </ul>
+        <div class="contenedor-busqueda cont-carreras">
+                @foreach (var carrera in ViewBag.Resultados.Carrerasr)
+                {   
+                    <div class="resultados-carreras">
+                        <img class="foto-carreras" src="@carrera.Foto" alt="Foto de la carrera @carrera.Nombre"/>
+                        <div class="info-carrera">
+                            <h3>@carrera.Nombre</h3>
+                            <p>Duración: @carrera.Duracion años</p>
+                            <p>Costo: $@carrera.Costo</p>
+                        </div>
+                    </div>
+                }
+        </div>
+            
+        
     }
     else
     {

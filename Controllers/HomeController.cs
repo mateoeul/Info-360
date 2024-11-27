@@ -47,15 +47,15 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
+        /*ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
         if(ViewBag.User is null)
         {
             return RedirectToAction("Login", "Auth");
-        }
+        }*/
         return View();
     }
 
-    [HttpGet]
+    /*[HttpGet]
     public IActionResult RegistrarUsuario()
     {
         // Crear un modelo vacío de usuario
@@ -66,40 +66,69 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult RegistrarUsuario(Usuarios usuario)
     {
-        // Aquí puedes validar el usuario (si lo deseas), luego lo guardas en la sesión
+        // Asegúrate de que no se guarde el Id del Usuario en el JSON
+        usuario.Id = 0; // Esto asegura que no se pase el Id al registrar el usuario
+
+        // Serializa el objeto y lo guarda en la sesión
         HttpContext.Session.SetString("UsuarioTemp", JsonSerializer.Serialize(usuario));
 
+        // Verifica que los datos se guardaron correctamente
+        var usuarioJson = HttpContext.Session.GetString("UsuarioTemp");
+        if (usuarioJson is null)
+        {
+            // Si no se encuentra en la sesión, redirige de nuevo
+            return RedirectToAction("RegistrarUsuario");
+        }
+
         // Redirige al siguiente paso
-        return RedirectToAction("RegistrarEstudiante");
+        return RedirectToAction("RegistroEstudiante");
     }
-    
-    [HttpPost]
-    public IActionResult RegistrarEstudiante(Estudiantes estudiante)
+
+    [HttpGet]
+    public IActionResult RegistroEstudiante()
     {
-        // Recuperar el usuario de la sesión
+        // Crear un modelo vacío de estudiante o inicializar según sea necesario
+        ViewBag.Carreras = DB.ObtenerCarreras();
+        var estudiante = new Estudiantes();
+        return View(estudiante);
+    }
+
+    [HttpPost]
+    public IActionResult RegistroEstudiante(Estudiantes estudiante)
+    {
+        // Recupera el usuario desde la sesión
         string? usuarioJson = HttpContext.Session.GetString("UsuarioTemp");
 
         if (usuarioJson is null)
         {
             // Si no existe el usuario, redirigir al primer paso
-            return RedirectToAction("RegistrarUsuario");    
+            return RedirectToAction("RegistrarUsuario");
         }
 
+        // Deserializa el usuario desde la sesión
         Usuarios usuario = JsonSerializer.Deserialize<Usuarios>(usuarioJson);
 
-        // Asocia el usuario al estudiante (si es necesario)
-        estudiante.IdUsuario = usuario.Id;
+        // Si el usuario es nulo, maneja el caso de error
+        if (usuario == null)
+        {
+            return RedirectToAction("RegistrarUsuario");
+        }
 
-        // Guarda al usuario y al estudiante en la base de datos
-        DB.RegistroUsuario(usuario);
+        // Registrar el usuario en la base de datos
+        int userId = DB.RegistroUsuario(usuario);
+
+        // Asocia el Id del usuario al estudiante
+        estudiante.IdUsuario = userId;
+
+        // Registrar al estudiante con el IdUsuario correctamente asignado
         DB.RegistroEst(estudiante);
 
         // Limpiar la sesión
         HttpContext.Session.Remove("UsuarioTemp");
 
         // Redirigir a login
-        return RedirectToAction("Login");
-    }
+        return RedirectToAction("Login", "Auth");
+    }*/
 
 
     public IActionResult ActualizarInfo(Estudiantes estudiante, string nombre, string apellido, string foto, DateOnly fechaNac, string carrera, string cursada)
@@ -137,29 +166,41 @@ public class HomeController : Controller
         ViewBag.Preguntas = DB.ObtenerPreguntasTest();
         return View();
     }
-    public IActionResult ResultadoTest(List<Preguntas> rtas)
+    public IActionResult ResultadoTest(List<int> preguntasSeleccionadas)
     {
-        List<int> idsMax = new List<int>();
-        int cantId = 0;
-        Dictionary<int, int> contador = new Dictionary<int, int>();
-        for (int i = 0; i < rtas.Count; i++)
+        if (preguntasSeleccionadas == null || !preguntasSeleccionadas.Any())
         {
-            if (rtas[i].Marcada){
-                if(contador.ContainsKey(rtas[i].IdCarrera))
-                contador[rtas[i].IdCarrera]++;
-                else
-                contador.Add(rtas[i].IdCarrera, 1); 
-            }   
-        }      
-        foreach(var par in contador){
-            if(par.Value > cantId){
-                idsMax.Clear();
-                idsMax.Add(par.Key);
-                cantId = par.Value;
-            } else if (par.Value == cantId){
-                idsMax.Add(par.Key);
-            }
+            Console.WriteLine("No se recibieron preguntas seleccionadas.");
+            ViewBag.MensajeError = "No seleccionaste ninguna opción. Por favor, intenta nuevamente.";
+            return View();
         }
+
+        Console.WriteLine("IDs seleccionados: " + string.Join(", ", preguntasSeleccionadas));
+
+        // Diccionario para contar las ocurrencias de cada carrera
+        Dictionary<int, int> contador = new Dictionary<int, int>();
+
+        foreach (var idCarrera in preguntasSeleccionadas)
+        {
+            if (contador.ContainsKey(idCarrera))
+                contador[idCarrera]++;
+            else
+                contador[idCarrera] = 1;
+        }
+
+        Console.WriteLine("Contador: " + string.Join(", ", contador.Select(kv => $"Carrera {kv.Key}: {kv.Value}")));
+
+        // Buscar las carreras con mayor cantidad de selecciones
+        int maxSeleccion = contador.Values.Max();
+        List<int> idsMax = contador.Where(kv => kv.Value == maxSeleccion)
+                                    .Select(kv => kv.Key)
+                                    .ToList();
+
+        // Recuperar las carreras ganadoras
+        ViewBag.CarrerasGanadoras = idsMax;
+        ViewBag.Carreras = DB.ObtenerCarreras(); // Obtiene todas las carreras de la DB
+
         return View();
     }
+
 }

@@ -1,0 +1,23 @@
+<section class="resultado-test">
+    <h1>Resultados del Test Vocacional</h1>
+
+    @if (ViewBag.CarrerasGanadoras != null && ViewBag.CarrerasGanadoras.Count > 0)
+    {
+        foreach (Carreras carrera in ViewBag.Carreras)
+        {
+            if (ViewBag.CarrerasGanadoras.Contains(carrera.Id))
+            {
+                <div class="carrera-resultado">
+                    <h2>@carrera.Nombre</h2>
+                    <p>Duración: @carrera.Duracion años</p>
+                    <p>Costo: $@carrera.Costo</p>
+                    <img src="@carrera.Foto" alt="Imagen de @carrera.Nombre" />
+                </div>
+            }
+        }
+    }
+    else
+    {
+        <p>No se encontraron carreras para las selecciones realizadas.</p>
+    }
+</section>

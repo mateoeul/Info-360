@@ -4,7 +4,7 @@
     <div class="register-box">
         <h1>Completar Datos del Estudiante</h1>
         
-        <form asp-action="RegistrarEstudiante" method="post">
+        <form asp-action="RegistroEstudiante" method="post">
             <div class="form-group">
                 <label for="Nombre">Nombre</label>
                 <input type="text" id="Nombre" name="Nombre" class="form-control" required />
@@ -22,7 +22,13 @@
 
             <div class="form-group">
                 <label for="Carrera">Carrera</label>
-                <input type="text" id="Carrera" name="Carrera" class="form-control" />
+                <select class="form-select" name="Carrera" aria-label="Default select example">
+                    <option value="">Carrera:</option>
+                    @foreach (Carreras carrera in ViewBag.Carreras) 
+                    {
+                        <option class="opcion" value="@carrera.Id">@carrera.Nombre</option>
+                    }
+                </select>
             </div>
 
             <div class="form-group">

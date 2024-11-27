@@ -1,32 +1,32 @@
-<section class="test-vocacional">
+<form action="ResultadoTest" method="post">
+    <section class="test-vocacional">
 
-    <h2>Test Vocacional</h2>
+        <h2>Test Vocacional</h2>
 
-    <section class="test">    
-        <div class="preguntas">
-            <h3>Seleccioná las actividades de tu interés</h3>
+        <section class="test">    
+            <div class="preguntas">
+                <h3>Seleccioná las actividades de tu interés</h3>
+                
+                @foreach (Preguntas preg in ViewBag.Preguntas)
+                {
+                    <div class="opcion">
+                        <input type="checkbox" id="opcion-@preg.Id" name="preguntasSeleccionadas" value="@preg.Id">
+                        <label for="opcion-@preg.Id">¿@preg.Descripcion</label>
+                    </div>
+                }
+            </div>
             
-            @foreach (Preguntas preg in ViewBag.Preguntas)
-            {
-                <div class="opcion">
-                    <input type="checkbox" id="opcion">
-                    <label for="opcion">¿@preg.Descripcion</label>
+            <div class="progreso">
+                <button class="button boton-continuar" type="submit">Continuar</button>
+                <div class="paginacion">
+                    <span class="pagina-activa"></span>
+                    <span></span>
+                    <span></span>
+                    <p>1 / 3</p>
                 </div>
-            }
-        </div>
-        
-        <div class="progreso">
-
-            <button class="button boton-continuar">Continuar</button>
-            <div class="paginacion">
-                <span class="pagina-activa"></span>
-                <span></span>
-                <span></span>
-                <p>1 / 3</p>
             </div>
 
-        </div>
+        </section>
 
     </section>
-
-</section>
+</form>

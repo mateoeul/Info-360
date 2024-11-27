@@ -678,7 +678,7 @@ margin-top: 0;
 }
 
 .test {
-  width: 42%;
+  width: 50%;
   margin: auto;
   border: 1px solid black;
   padding: 3%;
@@ -799,14 +799,44 @@ margin-top: 0;
 
 
 /*----------            BUSQUEDA                  --------------*/
-
-
 .busqueda{
   width: 80%;
   margin: 0 auto;
-  border: 1px solid black;
   margin-top: 3%;
 }
+.contenedor-busqueda{
+  display: flex;
+  justify-content: first baseline;
+}
+
+.busqueda .foto-facultades{
+  width: 100px;
+  height: 100px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Ajusta los valores según tu preferencia */
+
+}
+
+.busqueda .resultados-universidades{
+  display: flex;
+  justify-content: baseline;
+  width: 25%;
+  margin-bottom: 0;
+}
+.busqueda label{
+  color:#357ABD;
+}
+.perfil-universidad h6{
+  font-weight: bold;
+}
+.perfil-universidad h6{
+  margin-top: 3%;
+  margin-bottom: 0;
+}
+.perfil-universidad p{
+  margin-top: 1%;
+  margin-bottom: 0;
+}
+
 
 .busqueda h1, .busqueda h2{
   color: #3C4B7A;
@@ -879,4 +909,26 @@ margin-top: 0;
 .comparison-buttons button:hover {
   background-color: #ffffff;
   color: #0056b3;
+}
+
+.cont-carreras{
+  gap: 3%;
+  margin-bottom: 4%;
+}
+
+.foto-carreras{
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.info-carrera{
+  display: flex;
+  border-left: 0.6px solid black;
+  border-right: 0.6px solid black;
+  border-bottom: 0.6px solid black;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  flex-direction: column;
 }
