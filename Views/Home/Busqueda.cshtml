@@ -15,10 +15,8 @@
                     <div class="perfil-universidad">
                         <h6>@universidad.Nombre</h6>
                         <p>Ubicación: @universidad.Ubicación</p>
+                        <p>Tipo: @universidad.Tipo</p>
                         
-                        <input type="checkbox" class="compare-checkbox" 
-                            data-id="@universidad.Id" data-nombre="@universidad.Nombre" data-logo="@universidad.Foto">
-                        <label>Comparar</label>
                     </div>
                 </div>
             }          
@@ -44,12 +42,16 @@
                             <h3>@carrera.Nombre</h3>
                             <p>Duración: @carrera.Duracion años</p>
                             <p>Costo: $@carrera.Costo</p>
+                            <div class="checkbox-comparar">
+                                <input type="checkbox" class="compare-checkbox" 
+                                    data-id="@carrera.Id" data-nombre="@carrera.Nombre" data-logo="@carrera.Foto">
+                                <label>Comparar</label>
+                            </div>
                         </div>
                     </div>
                 }
         </div>
             
-        
     }
     else
     {
@@ -61,18 +63,9 @@
 
 
 
-
     <div id="comparison-bar" class="comparison-bar hidden">
         <div id="comparison-list" class="comparison-list">
-            <!-- Aquí se agregarán las universidades seleccionadas dinámicamente -->
-        </div>
-        <div class="comparison-bar" style="display: none;">
-        
-        <div class="comparison-list"></div>
-            <div class="comparison-buttons">
-                <button onclick="compareUniversities()">Comparar por universidad</button>
-                <button onclick="compareCareers()">Comparar por carrera</button>
-            </div>
+            <!-- Universidades seleccionadas serán añadidas aquí dinámicamente -->
         </div>
     </div>
 

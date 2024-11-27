@@ -850,85 +850,97 @@ margin-top: 0;
 .comparison-bar {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  background-color: #3C4B7A; /* Azul */
-  color: white;
-
+  background-color: #f8f9fa;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
   display: flex;
-  flex-direction: column; /* Para alinear todo en columnas */
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-
-  gap: 15px; /* Espacio entre los elementos */
 }
 
 .comparison-list {
   display: flex;
-  margin-right: 3%;
+  justify-content: center;
   align-items: center;
-  justify-content: center; /* Centrar ítems horizontalmente */
-  flex-wrap: wrap; /* Permitir que los elementos bajen de línea si hay muchos */
+  gap: 4%;
+}
+.comparison-list img{
+  width: 100px;
+  height: 60px;
 }
 
-.comparison-item {
-  display: flex;
-  align-items: center;
-  padding: 10px 15px; /* Más espacio */
-  background-color: #ffffff; /* Fondo blanco para contraste */
-  border-radius: 10px; /* Bordes redondeados */
-  color: #0056b3; /* Texto azul */
-  font-size: 16px; /* Fuente más grande */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  white-space: nowrap; /* Evitar que el texto se corte en varias líneas */
-}
-
-.comparison-item img {
-  width: 50px; /* Más grande */
-  height: 50px;
-  margin-right: 10px;
-  border-radius: 50%;
-}
-
-.comparison-buttons {
-  display: flex;
-  gap: 15px; /* Espacio entre botones */
-}
-
-.comparison-buttons button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: white;
-  color: #0056b3;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.comparison-buttons button:hover {
-  background-color: #ffffff;
-  color: #0056b3;
+.hidden {
+  display: none;
 }
 
 .cont-carreras{
   gap: 3%;
   margin-bottom: 4%;
 }
+.resultados-carreras{
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;  
+  flex-direction: column;
+  align-items: first baseline;
+}
+
+.checkbos-comparar{
+  display: flex;
+
+}
 
 .foto-carreras{
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  width: 100%;
+  width: 300px;
   height: 150px;
   object-fit: cover;
 }
 .info-carrera{
   display: flex;
-  border-left: 0.6px solid black;
-  border-right: 0.6px solid black;
-  border-bottom: 0.6px solid black;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
   flex-direction: column;
+}
+
+
+
+
+
+
+/*----------------------  COMPARACION   --------------------*/
+.comparacion-contenedor {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+.comparacion .carrera {
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  width: 45%;
+
+}
+
+.comparacion .carrera img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.comparacion .carrera h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.comparacion .carrera p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #666;
 }

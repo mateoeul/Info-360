@@ -1,0 +1,26 @@
+@{
+    var carrera1 = ViewBag.carrera1;
+    var carrera2 = ViewBag.carrera2;
+}
+<div class="busqueda">
+    <h6>Comparar:</h6>
+    <h2>@ViewBag.carrera1.Nombre && @ViewBag.carrera2.Nombre</h2>
+    <hr>
+</div>
+
+<section class="comparacion">
+    <div class="comparacion-contenedor">
+        <div class="carrera">
+            <img src="@carrera1.Foto" alt="@carrera1.Nombre" />
+            <h3>@carrera1.Nombre</h3>
+            <p>Duración: @carrera1.Duracion años</p>
+            <p>Costo: $@carrera1.Costo</p>
+        </div>
+        <div class="carrera">
+            <img src="@carrera2.Foto" alt="@carrera2.Nombre" />
+            <h3>@carrera2.Nombre</h3>
+            <p>Duración: @carrera2.Duracion años</p>
+            <p>Costo: $@carrera2.Costo</p>
+        </div>
+    </div>
+</section>

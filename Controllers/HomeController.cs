@@ -47,15 +47,15 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        /*ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
+        ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
         if(ViewBag.User is null)
         {
             return RedirectToAction("Login", "Auth");
-        }*/
+        }
         return View();
     }
 
-    /*[HttpGet]
+    [HttpGet]
     public IActionResult RegistrarUsuario()
     {
         // Crear un modelo vacío de usuario
@@ -117,6 +117,9 @@ public class HomeController : Controller
         // Registrar el usuario en la base de datos
         int userId = DB.RegistroUsuario(usuario);
 
+        Console.WriteLine(userId);
+        
+
         // Asocia el Id del usuario al estudiante
         estudiante.IdUsuario = userId;
 
@@ -128,7 +131,7 @@ public class HomeController : Controller
 
         // Redirigir a login
         return RedirectToAction("Login", "Auth");
-    }*/
+    }
 
 
     public IActionResult ActualizarInfo(Estudiantes estudiante, string nombre, string apellido, string foto, DateOnly fechaNac, string carrera, string cursada)
@@ -138,7 +141,7 @@ public class HomeController : Controller
     }
     public IActionResult Busqueda(string dato)
     {
-    
+        
         ViewBag.DatoBuscado = dato;
         ViewBag.Resultados = DB.Busqueda(dato);
         return View();

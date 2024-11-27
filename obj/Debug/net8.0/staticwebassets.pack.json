@@ -1,151 +1,151 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\ITBA.jpg",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\ITBA.jpg",
       "PackagePath": "staticwebassets\\img\\ITBA.jpg"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\Logo_Uni.png",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\Logo_Uni.png",
       "PackagePath": "staticwebassets\\img\\Logo_Uni.png"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\UCA.jpg",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\UCA.jpg",
       "PackagePath": "staticwebassets\\img\\UCA.jpg"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\UP.jpg",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\UP.jpg",
       "PackagePath": "staticwebassets\\img\\UP.jpg"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\UTN.jpg",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\UTN.jpg",
       "PackagePath": "staticwebassets\\img\\UTN.jpg"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\Uba.jpg",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\Uba.jpg",
       "PackagePath": "staticwebassets\\img\\Uba.jpg"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\carrousel2.jpg",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\carrousel2.jpg",
       "PackagePath": "staticwebassets\\img\\carrousel2.jpg"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\comparar1.jpg",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\comparar1.jpg",
       "PackagePath": "staticwebassets\\img\\comparar1.jpg"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\comparar2.png",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\comparar2.png",
       "PackagePath": "staticwebassets\\img\\comparar2.png"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\ditella.jfif",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\ditella.jfif",
       "PackagePath": "staticwebassets\\img\\ditella.jfif"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\fondo-test.jpg",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\fondo-test.jpg",
       "PackagePath": "staticwebassets\\img\\fondo-test.jpg"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\gmail.png",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\gmail.png",
       "PackagePath": "staticwebassets\\img\\gmail.png"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\instagram.png",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\instagram.png",
       "PackagePath": "staticwebassets\\img\\instagram.png"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\logo_uni_nav.png",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\logo_uni_nav.png",
       "PackagePath": "staticwebassets\\img\\logo_uni_nav.png"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\logo_uni_nav2.png",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\logo_uni_nav2.png",
       "PackagePath": "staticwebassets\\img\\logo_uni_nav2.png"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\logo_usuario.png",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\logo_usuario.png",
       "PackagePath": "staticwebassets\\img\\logo_usuario.png"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\uba-derecho.jfif",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\uba-derecho.jfif",
       "PackagePath": "staticwebassets\\img\\uba-derecho.jfif"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\uba-derecho.jpg",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\uba-derecho.jpg",
       "PackagePath": "staticwebassets\\img\\uba-derecho.jpg"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\whatsapp.png",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\whatsapp.png",
       "PackagePath": "staticwebassets\\img\\whatsapp.png"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\x.png",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\img\\x.png",
       "PackagePath": "staticwebassets\\img\\x.png"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\js\\comparacion.js",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\js\\comparacion.js",
       "PackagePath": "staticwebassets\\js\\comparacion.js"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\js\\perfil.js",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\js\\perfil.js",
       "PackagePath": "staticwebassets\\js\\perfil.js"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\48044168\\Desktop\\Info-360\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

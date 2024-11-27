@@ -3,8 +3,8 @@ using Dapper;
 
 public class DB
 {
-    //private static string _connectionString = @"Server=localHost;DataBase=Uni;Trusted_Connection=True;";
-    private static string _connectionString =  @"Server=BANGHODEMATEO\SQLEXPRESS;DataBase=Uni;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localHost;DataBase=Uni;Trusted_Connection=True;";
+    //private static string _connectionString =  @"Server=BANGHODEMATEO\SQLEXPRESS;DataBase=Uni;Trusted_Connection=True;";
 
     /*public static void RegistroUni(Universidades universidad)
     {
@@ -117,13 +117,14 @@ public static void RegistroEst(Estudiantes estudiante)
     public static Carreras MostrarInfoCarrera(int pId)
     {
         Carreras carrera = null;
-        using(SqlConnection db = new SqlConnection(_connectionString))
+        using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Carreras WHERE Id = @pId";
-            carrera = db.QueryFirstOrDefault<Carreras>(sql, new{pId = carrera.Id});
+            carrera = db.QueryFirstOrDefault<Carreras>(sql, new { pId = pId });
         }
         return carrera;
     }
+
     public static List<Becas> BecasXUni(int idUni)
     {
         List<Becas> becas = new List<Becas>();
