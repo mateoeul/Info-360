@@ -3,8 +3,8 @@ using Dapper;
 
 public class DB
 {
-    private static string _connectionString = @"Server=localHost;DataBase=Uni;Trusted_Connection=True;";
-    //private static string _connectionString =  @"Server=BANGHODEMATEO\SQLEXPRESS;DataBase=Uni;Trusted_Connection=True;";
+    //private static string _connectionString = @"Server=localHost;DataBase=Uni;Trusted_Connection=True;";
+    private static string _connectionString =  @"Server=BANGHODEMATEO\SQLEXPRESS;DataBase=Uni;Trusted_Connection=True;";
 
     /*public static void RegistroUni(Universidades universidad)
     {

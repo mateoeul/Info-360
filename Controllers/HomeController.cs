@@ -65,29 +65,23 @@ public class HomeController : Controller
 
     [HttpPost]
     public IActionResult RegistrarUsuario(Usuarios usuario)
-    {
-        // Asegúrate de que no se guarde el Id del Usuario en el JSON
-        usuario.Id = 0; // Esto asegura que no se pase el Id al registrar el usuario
+    {  
+        usuario.Id = 0; 
 
-        // Serializa el objeto y lo guarda en la sesión
         HttpContext.Session.SetString("UsuarioTemp", JsonSerializer.Serialize(usuario));
 
-        // Verifica que los datos se guardaron correctamente
         var usuarioJson = HttpContext.Session.GetString("UsuarioTemp");
         if (usuarioJson is null)
         {
-            // Si no se encuentra en la sesión, redirige de nuevo
             return RedirectToAction("RegistrarUsuario");
         }
 
-        // Redirige al siguiente paso
         return RedirectToAction("RegistroEstudiante");
     }
 
     [HttpGet]
     public IActionResult RegistroEstudiante()
     {
-        // Crear un modelo vacío de estudiante o inicializar según sea necesario
         ViewBag.Carreras = DB.ObtenerCarreras();
         var estudiante = new Estudiantes();
         return View(estudiante);
@@ -96,40 +90,30 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult RegistroEstudiante(Estudiantes estudiante)
     {
-        // Recupera el usuario desde la sesión
         string? usuarioJson = HttpContext.Session.GetString("UsuarioTemp");
 
         if (usuarioJson is null)
         {
-            // Si no existe el usuario, redirigir al primer paso
             return RedirectToAction("RegistrarUsuario");
         }
 
-        // Deserializa el usuario desde la sesión
         Usuarios usuario = JsonSerializer.Deserialize<Usuarios>(usuarioJson);
 
-        // Si el usuario es nulo, maneja el caso de error
         if (usuario == null)
         {
             return RedirectToAction("RegistrarUsuario");
         }
 
-        // Registrar el usuario en la base de datos
         int userId = DB.RegistroUsuario(usuario);
 
         Console.WriteLine(userId);
-        
 
-        // Asocia el Id del usuario al estudiante
         estudiante.IdUsuario = userId;
 
-        // Registrar al estudiante con el IdUsuario correctamente asignado
         DB.RegistroEst(estudiante);
 
-        // Limpiar la sesión
         HttpContext.Session.Remove("UsuarioTemp");
 
-        // Redirigir a login
         return RedirectToAction("Login", "Auth");
     }
 

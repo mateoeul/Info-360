@@ -1,13 +1,15 @@
 @model Usuarios
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <section class="register-container">
     <div class="register-box">
-        <h1>Registrar Usuario</h1>
-        
-        <form asp-action="RegistrarUsuario" method="post">
+        <form asp-action="RegistrarUsuario" method="post" class="formulario-registro">
+            <img src="../img/logo_uni_nav2.png" alt="">
+            <h2>Registrarse</h2>
+
             <div class="form-group">
                 <label for="Mail">Email</label>
-                <input type="email" id="Mail" name="Mail" class="form-control" required />
+                <input type="email" id="email" name="email" class="form-control" required />
             </div>
 
             <div class="form-group">
@@ -16,13 +18,39 @@
             </div>
 
             <div class="form-group">
+                <div id="error-message" style="color: red; font-size: 0.9em; display: none;">
+                    Las contraseñas no coinciden.
+                </div>
                 <label for="Contraseña">Contraseña</label>
-                <input type="password" id="Contraseña" name="Contraseña" class="form-control" required />
+                <div class="input-group">
+                    <input type="password" id="Contraseña" name="Contraseña" class="form-control" required />
+                    <span class="toggle-password" data-target="#Contraseña">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="ConfirmarContraseña">Confirmar Contraseña</label>
+                <div class="input-group">
+                    <input type="password" id="ConfirmarContraseña" name="ConfirmarContraseña" class="form-control" required />
+                    <span class="toggle-password" data-target="#ConfirmarContraseña">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                </div>
             </div>
 
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Siguiente</button>
             </div>
         </form>
+
+        <div class="imagen-registro">
+            <img src="../img/estudio.jpg" alt="">   
+        </div>
     </div>
 </section>
+
+<script src="../js/ojitos.js"></script>
+
+<script src="../js/confirmarContraseña.js"></script>
