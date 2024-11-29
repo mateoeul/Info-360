@@ -1,17 +1,16 @@
-    // Mostrar/ocultar contraseñas
-    document.querySelectorAll('.toggle-password').forEach(span => {
-        span.addEventListener('click', () => {
-            const input = document.querySelector(span.getAttribute('data-target'));
-            const icon = span.querySelector('i');
 
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
+    document.querySelectorAll('.toggle-password').forEach((toggle) => {
+        toggle.addEventListener('click', function () {
+            const target = document.querySelector(this.getAttribute('data-target'));
+            if (target.type === 'password') {
+                target.type = 'text';
+                this.querySelector('i').classList.remove('fa-eye');
+                this.querySelector('i').classList.add('fa-eye-slash');
             } else {
-                input.type = 'password';
-                icon.classList.remove('fa-eye-slash');
-                icon.classList.add('fa-eye');
+                target.type = 'password';
+                this.querySelector('i').classList.remove('fa-eye-slash');
+                this.querySelector('i').classList.add('fa-eye');
             }
         });
     });
+

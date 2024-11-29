@@ -92,10 +92,12 @@ public static void RegistroEst(Estudiantes estudiante)
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Estudiantes WHERE Id = @pId";
-            estudiante = db.QueryFirstOrDefault<Estudiantes>(sql, new{pId = estudiante.Id});
+            // Se pasa el parámetro pId directamente, no estudiante.Id
+            estudiante = db.QueryFirstOrDefault<Estudiantes>(sql, new { pId = pId });
         }
         return estudiante;
     }
+
     public static void ActualizarInfoEst(Estudiantes estudiante, string pnombre, string pfoto, string papellido, DateOnly pfnac, string pcarrera, string pcursada)
     {
         string sql = "UPDATE Estudiantes SET Nombre = @pnombre, Apellido = @papellido, Foto = @pfoto, FechaNac = @pfnac, Carrera = @pcarrera, Cursada = @pcursada WHERE Id = @pId";
@@ -197,6 +199,28 @@ public static void RegistroEst(Estudiantes estudiante)
         return true;
         else
         return false;
+    }
+
+    public static Usuarios ObtenerUsuarioPorEmail(string mail)
+    {
+        Usuarios usuario = null;
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Usuarios WHERE Mail = @pmail";
+            usuario = db.QueryFirstOrDefault<Usuarios>(sql, new{pmail = mail});
+        }
+        return usuario;
+    }
+
+    public static Usuarios ObtenerUsuarioPorId(int id)
+    {
+        Usuarios usuario = null;
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Usuarios WHERE Id = @pid";
+            usuario = db.QueryFirstOrDefault<Usuarios>(sql, new{pid = id});
+        }
+        return usuario;
     }
     /*
     public static ResultadoBusqueda Busqueda(string datoIng, Busqueda pbusqueda) 

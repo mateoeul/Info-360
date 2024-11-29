@@ -463,7 +463,7 @@ footer pre{
 .register-box {
   background-color: #ffffff;
   width: 60%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2  );
   border-radius: 10px;
   font-family: Arial, sans-serif;
   display: flex;
@@ -524,8 +524,6 @@ footer pre{
   margin-bottom: 20px;
 }
 
-
-
 .toggle-password {
   position: absolute;
   top: 40%;
@@ -538,26 +536,31 @@ footer pre{
   background-color: transparent; /* Evita que interfiera visualmente */
   padding: 5px; /* Facilita el clic en el ícono */
 }
+.login-container .toggle-password{
+  z-index: 5;
+}
+
 
 .toggle-password:hover {
   color: #3C4B7A;
 }
 
 .register-box button {
-  width: 90%;
+  width: 100%;
   padding: 8px;
   background-color: #3C4B7A;
   color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 14px;
+
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 1%;
   transition: background-color 0.3s;
 }
 
 .register-box button:hover {
-  background-color: #357ABD;
+  background-color: #2d385a;
 }
 
 .register-box h3 {

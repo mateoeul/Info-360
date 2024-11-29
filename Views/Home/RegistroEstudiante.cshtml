@@ -1,10 +1,10 @@
 @model Estudiantes
 
 <section class="register-container">
-    <div class="register-box">
-        <h1>Completar Datos del Estudiante</h1>
-        
-        <form asp-action="RegistroEstudiante" method="post">
+    <div class="register-box">        
+        <form asp-action="RegistroEstudiante" method="post" class="formulario-registro">
+            <img src="../img/logo_uni_nav2.png" alt="">
+            <h2>Datos personales</h2>
             <div class="form-group">
                 <label for="Nombre">Nombre</label>
                 <input type="text" id="Nombre" name="Nombre" class="form-control" required />
@@ -35,5 +35,9 @@
                 <button type="submit" class="btn btn-primary">Registrar</button>
             </div>
         </form>
+        <div class="imagen-registro">
+            <img src="../img/estudio.jpg" alt="">   
+        </div>
+
     </div>
 </section>

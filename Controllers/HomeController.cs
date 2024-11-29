@@ -14,51 +14,18 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    /*
-    public IActionResult Registro(char tipo)
-    {
-        switch(tipo)
-        {
-            case 'E':
-            return RedirectToAction("RegistroEst");
-            
-            case 'U':
-            return RedirectToAction("RegistroUni");
-            
-            case 'P':
-            return RedirectToAction("RegistroProf");
+public IActionResult Index()
+{
+    ViewBag.isUserLogged = HttpContext.Session.GetString("user") != null;
+    return View();
+}
 
-            default:
-            return View("Index");
-        }
-    }
-    public IActionResult RegistroProf(Profesores profesor, Usuarios usuario)
-    {
-        DB.RegistroProf(profesor);
-        DB.RegistroUsuario(usuario);
-        return RedirectToAction("Index");
-    }
-    public IActionResult RegistroUni(Universidades universidad, Usuarios usuario)
-    {
-        DB.RegistroUni(universidad);
-        DB.RegistroUsuario(usuario);
-        return RedirectToAction("Index");
-    }*/
 
-    public IActionResult Index()
-    {
-        ViewBag.User = Usuarios.FromString(HttpContext.Session.GetString("user"));
-        if(ViewBag.User is null)
-        {
-            return RedirectToAction("Login", "Auth");
-        }
-        return View();
-    }
+
 
     [HttpGet]
     public IActionResult RegistrarUsuario()
     {
-        // Crear un modelo vacío de usuario
         var usuario = new Usuarios();
         return View(usuario);
     }
@@ -130,16 +97,18 @@ public class HomeController : Controller
         ViewBag.Resultados = DB.Busqueda(dato);
         return View();
     }
-    public IActionResult PerfilEst(int id)
+    public IActionResult Perfil(int id)
     {
+        Console.WriteLine(id);
         ViewBag.estudiante = DB.MostrarInfoEst(id);
+        //ViewBag.Usuario = DB.ObtenerUsuarioPorId(ViewBag.estudiante.IdUsuario);
         return View();
     }
     public IActionResult PerfilUni(int id)
     {
         ViewBag.universidad = DB.MostrarInfoUni(id);
         ViewBag.becas = DB.BecasXUni(id);
-        ViewBag.Condiciones = DB.CondicionesXUni(id);
+        ViewBag.Condiciones = DB.CondicionesXUni(id);   
         return View();
     }
     public IActionResult CompararCarreras(int id1, int id2)

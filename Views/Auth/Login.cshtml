@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <section class="login-container">
     <div class="login-box">
         <h1>Uni</h1>
@@ -12,10 +13,17 @@
 
         <form method="post" asp-action="VerificarLogin">
             <label for="email">Correo electrónico</label>
-            <input type="text" id="email" name="email" placeholder="example@uni.com" required />
+            <div class="form-group">
+                <input type="email" id="email" name="email" class="form-control" required />
+            </div>
 
             <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="********" required />
+            <div class="input-group">
+                <input type="password" id="password" name="password" class="form-control" required />
+                <span class="toggle-password" data-target="#password">
+                    <i class="fa fa-eye"></i>
+                </span>
+            </div>
 
             <button class="google-btn">
                 <img src="https://img.icons8.com/?size=512&id=17949&format=png" alt="Google Icon" class="icon" /> Continuar con Google
@@ -36,3 +44,5 @@
         </div>
     </div>
 </section>
+
+<script src="../js/ojitos.js"></script>
