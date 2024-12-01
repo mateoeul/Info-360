@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OiXrXOBe/ZsYbbE+vhCtZ9Ar3UxkffvxjQ9g/rHQ82w=",
+  "Hash": "P8bMpVYYad0sNmO3k0phPXqMj9RrdUgB2O+/b0bHPtQ=",
   "Source": "Uni.",
   "BasePath": "_content/Uni.",
   "Mode": "Default",
@@ -452,6 +452,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\x.png"
+    },
+    {
+      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\3er bim\\Info-360\\wwwroot\\js\\agarre.js",
+      "SourceId": "Uni.",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\3er bim\\Info-360\\wwwroot\\",
+      "BasePath": "_content/Uni.",
+      "RelativePath": "js/agarre.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\agarre.js"
     },
     {
       "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\3er bim\\Info-360\\wwwroot\\js\\comparacion.js",

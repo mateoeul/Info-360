@@ -852,6 +852,57 @@ margin-top: 0;
   margin: 0 auto;
   margin-top: 3%;
 }
+
+.contenedor-busqueda {
+  display: flex;
+  gap: 1rem; /* Espaciado entre elementos */
+  overflow-x: auto; /* Activar scroll horizontal si es necesario */
+  padding: 1rem; /* Espaciado interno */
+  scroll-behavior: smooth; /* Movimiento suave al desplazarse */
+}
+
+.contenedor-busqueda {
+  display: flex;
+  gap: 1rem; /* Espaciado entre elementos */
+  overflow-x: auto; /* Scroll horizontal */
+  padding: 1rem; /* Espaciado interno */
+  scroll-behavior: smooth; /* Movimiento suave */
+  background: #fff; /* Fondo blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+  border-radius: 8px; /* Bordes redondeados */
+  cursor: grab; /* Indica que se puede arrastrar */
+  user-select: none;
+}
+
+.contenedor-busqueda2 {
+  display: flex;
+  gap: 1rem; /* Espaciado entre elementos */
+  scroll-behavior: smooth; /* Movimiento suave */
+  background: #fff; /* Fondo blanco */
+  cursor: grab; /* Indica que se puede arrastrar */
+  cursor:auto;
+}
+
+
+.contenedor-busqueda:active {
+  cursor: grabbing; /* Cambia el cursor al arrastrar */
+}
+
+.contenedor-busqueda::-webkit-scrollbar {
+  height: 8px; /* Altura del scroll horizontal */
+}
+
+.contenedor-busqueda::-webkit-scrollbar-thumb {
+  background: #ccc; /* Color del "pulgar" */
+  border-radius: 4px;
+}
+
+.contenedor-busqueda::-webkit-scrollbar-thumb:hover {
+  background: #aaa; /* Color del "pulgar" al pasar el cursor */
+}
+
+
+
 .contenedor-busqueda{
   display: flex;
   justify-content: first baseline;
@@ -949,6 +1000,7 @@ margin-top: 0;
   object-fit: cover;
 }
 .info-carrera{
+  padding: 5%;
   display: flex;
   flex-direction: column;
 }

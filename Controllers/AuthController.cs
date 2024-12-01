@@ -14,41 +14,40 @@ namespace Uni_.Controllers
             _logger = logger;
         }
 
-        // Acción para mostrar la vista de login
-        public IActionResult Login()
+
+    public IActionResult Login(string? returnUrl = null)
+    {
+        if (HttpContext.Session.GetString("user") != null)
         {
-            // Si el usuario ya está logueado (sesión activa), redirige al home
-            if (HttpContext.Session.GetString("user") != null)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            return View();
+            return Redirect(returnUrl ?? Url.Action("Index", "Home"));
+            
         }
 
-        // Acción para verificar el login
-        [HttpPost]
-        public IActionResult VerificarLogin(string email, string password)
+        ViewBag.ReturnUrl = returnUrl; // Guardar la URL de retorno
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult VerificarLogin(string email, string password, string? returnUrl = null)
+    {
+        if (DB.VerificarLogin(email, password))
         {
-            // Llama al método que verifica si las credenciales son correctas
-            if (DB.VerificarLogin(email, password))
-            {
-                // Obtener al usuario desde la base de datos por su email (esto depende de tu implementación en DB)
-                var usuario = DB.ObtenerUsuarioPorEmail(email); // Asegúrate de tener este método en DB
+            var usuario = DB.ObtenerUsuarioPorEmail(email);
 
-                // Guardamos los datos del usuario en la sesión
-                HttpContext.Session.SetString("user", usuario.ToString());
-                HttpContext.Session.SetInt32("userId", usuario.Id); // Guarda el ID de usuario en la sesión
+            HttpContext.Session.SetString("user", usuario.ToString());
+            HttpContext.Session.SetInt32("userId", usuario.Id);
 
-                // Redirige al home
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                // Si las credenciales son incorrectas, muestra un mensaje de error
-                ViewBag.Error = "Email o contraseña incorrectos.";
-                return View("Login");
-            }
+            // Redirige a la URL original o al Home si no hay URL original
+            return Redirect(returnUrl ?? Url.Action("Index", "Home"));
         }
+        else
+        {
+            ViewBag.Error = "Email o contraseña incorrectos.";
+            ViewBag.ReturnUrl = returnUrl;
+            return View("Login");
+        }
+    }
+
 
         // Acción para cerrar sesión
         public IActionResult Logout()

@@ -14,14 +14,11 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-public IActionResult Index()
-{
-    ViewBag.isUserLogged = HttpContext.Session.GetString("user") != null;
-    return View();
-}
-
-
-
+    public IActionResult Index()
+    {
+        ViewBag.isUserLogged = HttpContext.Session.GetString("user") != null;
+        return View();
+    }
 
     [HttpGet]
     public IActionResult RegistrarUsuario()
@@ -72,6 +69,7 @@ public IActionResult Index()
         }
 
         int userId = DB.RegistroUsuario(usuario);
+        ViewBag.IdUsuario = userId;
 
         Console.WriteLine(userId);
 
@@ -97,13 +95,16 @@ public IActionResult Index()
         ViewBag.Resultados = DB.Busqueda(dato);
         return View();
     }
+
+
     public IActionResult Perfil(int id)
     {
-        Console.WriteLine(id);
         ViewBag.estudiante = DB.MostrarInfoEst(id);
-        //ViewBag.Usuario = DB.ObtenerUsuarioPorId(ViewBag.estudiante.IdUsuario);
+        ViewBag.Usuario = DB.ObtenerUsuarioPorId(id);
         return View();
     }
+
+
     public IActionResult PerfilUni(int id)
     {
         ViewBag.universidad = DB.MostrarInfoUni(id);

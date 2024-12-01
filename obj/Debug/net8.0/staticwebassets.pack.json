@@ -93,6 +93,10 @@
       "PackagePath": "staticwebassets\\img\\x.png"
     },
     {
+      "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\3er bim\\Info-360\\wwwroot\\js\\agarre.js",
+      "PackagePath": "staticwebassets\\js\\agarre.js"
+    },
+    {
       "Id": "C:\\Users\\Mateo\\Desktop\\Programacion\\3er bim\\Info-360\\wwwroot\\js\\comparacion.js",
       "PackagePath": "staticwebassets\\js\\comparacion.js"
     },

@@ -22,40 +22,34 @@ public class DB
         {
             db.Execute(sql, new{pnombre = profesor.Nombre, papellido = profesor.Apellido, pfoto = profesor.Foto, pfnac = profesor.FechaNac, pbio = profesor.Bio, pidusuario = profesor.IdUsuario});
         }
-    }*/
-public static void RegistroEst(Estudiantes estudiante)
-{
-    if (estudiante.IdUsuario == null || estudiante.IdUsuario == 0)
+        }*/
+    public static void RegistroEst(Estudiantes estudiante)
     {
-        throw new InvalidOperationException("IdUsuario no puede ser NULL o 0.");
-    }
-
-    DateTime? fechaNac = estudiante.FechaNac.HasValue 
-        ? estudiante.FechaNac.Value.ToDateTime(new TimeOnly(0, 0)) 
-        : (DateTime?)null;
-
-    string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, FechaNac, Carrera, IdUsuario) " +
-                "VALUES (@pnombre, @papellido, @pfoto, @pfnac, @pcarrera, @pidusuario)";
-    
-    using (SqlConnection db = new SqlConnection(_connectionString))
-    {
-        db.Execute(sql, new
+        if (estudiante.IdUsuario == null || estudiante.IdUsuario == 0)
         {
-            pnombre = estudiante.Nombre,
-            papellido = estudiante.Apellido,
-            pfoto = estudiante.Foto ?? (object)DBNull.Value,
-            pfnac = fechaNac,
-            pcarrera = estudiante.Carrera ?? (object)DBNull.Value,
-            pidusuario = estudiante.IdUsuario // Asegúrate de que este valor sea correcto
-        });
+            throw new InvalidOperationException("IdUsuario no puede ser NULL o 0.");
+        }
+
+        DateTime? fechaNac = estudiante.FechaNac.HasValue 
+            ? estudiante.FechaNac.Value.ToDateTime(new TimeOnly(0, 0)) 
+            : (DateTime?)null;
+
+        string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, FechaNac, Carrera, IdUsuario) " +
+                    "VALUES (@pnombre, @papellido, @pfoto, @pfnac, @pcarrera, @pidusuario)";
+        
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            db.Execute(sql, new
+            {
+                pnombre = estudiante.Nombre,
+                papellido = estudiante.Apellido,
+                pfoto = estudiante.Foto ?? (object)DBNull.Value,
+                pfnac = fechaNac,
+                pcarrera = estudiante.Carrera ?? (object)DBNull.Value,
+                pidusuario = estudiante.IdUsuario // Asegúrate de que este valor sea correcto
+            });
+        }
     }
-}
-
-
-
-
-
-
 
     public static int RegistroUsuario(Usuarios usuario)
     {
@@ -170,7 +164,7 @@ public static void RegistroEst(Estudiantes estudiante)
     }
 
 
-        public static ResultadoBusqueda Busqueda(string datoIng)
+    public static ResultadoBusqueda Busqueda(string datoIng)
     {
         ResultadoBusqueda resultados = new ResultadoBusqueda 
         {
@@ -183,7 +177,9 @@ public static void RegistroEst(Estudiantes estudiante)
             resultados.Universidadesr = db.Query<Universidades>(sql, new {pDatoIng = "%" + datoIng + "%" }).ToList();
             sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng";
             resultados.Carrerasr = db.Query<Carreras>(sql, new {pDatoIng = "%" + datoIng + "%" }).ToList();
+            
         }        
+
         return resultados;        
     }
     public static bool VerificarLogin(string mail, string contra)
