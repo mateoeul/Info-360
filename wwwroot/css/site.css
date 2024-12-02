@@ -571,10 +571,6 @@ footer pre{
 }
 
 /*----------------------------------- PERFIL --------------------------------------------*/
-.perfil-usuario {
-  overflow: hidden;
-  background-color: #FFFFFF;
-}
 .perfil-usuario .info-perfil{
   display: flex;
   justify-content: center;
@@ -592,9 +588,9 @@ footer pre{
   width: 140px;
   height: 140px;
   position: absolute;
-  background-color: #ffffff;
+  background-color: #969696;
   padding: 0;
-  top: 20%;
+  top: 15%;
   left: 13%;
 }
 
@@ -664,6 +660,7 @@ footer pre{
 }
 
 .perfil-usuario  .descripcion p{
+  padding: 2%;
   margin-top: 1%;
   margin-left: 1%;
 }
@@ -946,28 +943,60 @@ margin-top: 0;
   overflow: hidden;
 }
 
+.compare-button{
+  background-color: #5D88B3;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 0 5px 0;
+  width: 15%;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición para fondo y color */
+}
+
+.compare-button:hover{
+  background-color: #4f7397;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 0 5px 0;
+  width: 15%;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición para fondo y color */
+}
+
 .comparison-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #f8f9fa;
+  background-color: #3C4B7A;
   box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
 .comparison-list {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4%;
+  justify-content: baseline;
+  margin-left: 20%;
+
 }
 .comparison-list img{
-  width: 100px;
-  height: 60px;
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .hidden {
@@ -1006,7 +1035,19 @@ margin-top: 0;
 }
 
 
+.selected-career{
+  background-color: white;
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+  
+  margin-left: 5%;
+}
 
+.selected-career span{
+  padding: 2%;
+  font-weight: bold;
+}
 
 
 

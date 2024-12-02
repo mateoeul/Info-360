@@ -6,7 +6,7 @@ public class Estudiantes
     public string? Apellido { get; set; }
 
     // Aseguramos que FechaNac pueda manejar valores nulos
-    public DateOnly? FechaNac { get; set; }
+    public DateTime? FechaNac { get; set; }
 
     // Carrera y Cursada ahora permiten valores nulos
     public string? Carrera { get; set; }

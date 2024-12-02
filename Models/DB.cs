@@ -30,10 +30,6 @@ public class DB
             throw new InvalidOperationException("IdUsuario no puede ser NULL o 0.");
         }
 
-        DateTime? fechaNac = estudiante.FechaNac.HasValue 
-            ? estudiante.FechaNac.Value.ToDateTime(new TimeOnly(0, 0)) 
-            : (DateTime?)null;
-
         string sql = "INSERT INTO Estudiantes (Nombre, Apellido, Foto, FechaNac, Carrera, IdUsuario) " +
                     "VALUES (@pnombre, @papellido, @pfoto, @pfnac, @pcarrera, @pidusuario)";
         
@@ -44,12 +40,13 @@ public class DB
                 pnombre = estudiante.Nombre,
                 papellido = estudiante.Apellido,
                 pfoto = estudiante.Foto ?? (object)DBNull.Value,
-                pfnac = fechaNac,
+                pfnac = estudiante.FechaNac,  // No es necesario hacer conversión, ya es DateTime?
                 pcarrera = estudiante.Carrera ?? (object)DBNull.Value,
-                pidusuario = estudiante.IdUsuario // Asegúrate de que este valor sea correcto
+                pidusuario = estudiante.IdUsuario
             });
         }
     }
+
 
     public static int RegistroUsuario(Usuarios usuario)
     {
@@ -83,14 +80,24 @@ public class DB
     public static Estudiantes MostrarInfoEst(int pId)
     {
         Estudiantes estudiante = null;
-        using(SqlConnection db = new SqlConnection(_connectionString))
+        using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Estudiantes WHERE Id = @pId";
-            // Se pasa el parámetro pId directamente, no estudiante.Id
+            string sql = @"
+                SELECT e.Id, e.Nombre, e.Apellido, 
+                    e.FechaNac, c.Nombre AS Carrera, e.IdUsuario
+                FROM Estudiantes e
+                LEFT JOIN Carreras c ON e.Carrera = c.Id
+                WHERE e.IdUsuario = @pId";
+
+            // Ejecutar la consulta y obtener el primer registro
             estudiante = db.QueryFirstOrDefault<Estudiantes>(sql, new { pId = pId });
         }
         return estudiante;
     }
+
+
+
+
 
     public static void ActualizarInfoEst(Estudiantes estudiante, string pnombre, string pfoto, string papellido, DateOnly pfnac, string pcarrera, string pcursada)
     {
