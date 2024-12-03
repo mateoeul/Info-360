@@ -1,13 +1,26 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 <section class="perfil-usuario">
 
     <div class="banner"></div>
-    <img src="../img/logo_usuario.png" class="foto-facultades" alt="...">
+    <img src="../../img/logo_usuario.png" class="foto-facultades" alt="...">
 
     <section class="info-perfil">
-        <div class="Info-personal">
+        <div class="Info-personal"> 
+            <div class="nombre-usuario">
             <h4>@("@" + ViewBag.Usuario.NombreUsuario)</h4>
-            <h5>@ViewBag.estudiante.Nombre @ViewBag.estudiante.Apellido </h5>
-            <h6>@ViewBag.estudiante.Carrera</h6>
+            <div class="cerrar-sesion">
+                <a href='@Url.Action("Logout", "Auth")'><i class="fa fa-sign-out-alt"></i></a>
+                <a href='@Url.Action("Logout", "Auth")'><h6>Cerrar sesión</h6></a>
+            </div>
+            </div>
+
+<h4>
+    @(char.ToUpper(ViewBag.estudiante.Nombre[0]) + ViewBag.estudiante.Nombre.Substring(1).ToLower() + " " +
+      char.ToUpper(ViewBag.estudiante.Apellido[0]) + ViewBag.estudiante.Apellido.Substring(1).ToLower())
+</h4>
+
+
+            <h5>@ViewBag.estudiante.Carrera</h5>
         </div>
 
         <div class="Info-usuario">

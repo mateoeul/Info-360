@@ -346,15 +346,14 @@ footer pre{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 7%;
     margin-bottom: 8%;
-    height: 80vh;
     box-shadow: 5px 5;
 }
 
 
 .login-box {
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2  );
     width: 28%;
     padding: 40px;
     border: 1px solid #D4D9E2;
@@ -428,6 +427,7 @@ footer pre{
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .register-btn {
@@ -455,8 +455,8 @@ footer pre{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2%;
-  margin-bottom: 3%;
+  margin-top: 7%;
+  margin-bottom: 8%;
   height: auto;
 }
 
@@ -588,7 +588,7 @@ footer pre{
   width: 140px;
   height: 140px;
   position: absolute;
-  background-color: #969696;
+  background-color: #eeeeee;
   padding: 0;
   top: 15%;
   left: 13%;
@@ -663,6 +663,24 @@ footer pre{
   padding: 2%;
   margin-top: 1%;
   margin-left: 1%;
+}
+
+
+.nombre-usuario{
+  display: flex;
+  justify-content: space-evenly;
+}
+.cerrar-sesion{
+  display: flex;
+  color: red;
+  justify-content: baseline;
+  margin-left: 200%;
+  font-size: 1rem;
+}
+
+.cerrar-sesion a:visited{
+  color: red;
+  font-style: none;
 }
 
 
@@ -1084,4 +1102,116 @@ margin-top: 0;
   margin: 5px 0;
   font-size: 1rem;
   color: #666;
+}
+
+
+/*---------------------------------      AYUDA              -----------------------------------*/
+.ayuda{
+  width: 80%;
+  margin: 0 auto;
+}
+.ayuda .busqueda {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ayuda .contenido-ayuda {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ayuda .faq {
+  width: 60%; 
+  font-family: Arial, sans-serif;
+}
+
+.ayuda .faq h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ayuda .faq-item {
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.ayuda .faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.ayuda .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #F8FFFF;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.ayuda .faq-answer p {
+  margin: 0;
+  color: black;
+}
+
+.ayuda .faq-question i {
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.ayuda .faq-question.active i {
+  transform: rotate(180deg);
+}
+
+.ayuda .faq-item.open .faq-answer {
+  max-height: 500px; /* O ajusta según el contenido */
+  padding: 2%;
+}
+
+.ayuda .faq-item.open .faq-question i {
+  transform: rotate(180deg);
+}
+
+/* Contacto */
+.ayuda .contacto {
+  width: 35%; /* Ajusta el ancho de la sección de contacto */
+  margin-top: 2%;
+  text-align: left;
+}
+
+.ayuda .contacto h3 {
+  font-size: 18px;
+}
+
+.ayuda .contacto h2 {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.ayuda .contacto-item {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.ayuda .contacto-item i {
+  font-size: 24px;
+  color: #007bff; /* Azul, puedes ajustarlo */
+  transition: color 0.3s ease;
+}
+
+.ayuda .contacto-item i:hover {
+  color: #0056b3; /* Azul oscuro */
+}
+
+/* General */
+hr {
+  border: 1px solid #ddd;
+  width: 100%;
 }

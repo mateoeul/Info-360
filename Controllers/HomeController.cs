@@ -90,12 +90,15 @@ public class HomeController : Controller
     }
     public IActionResult Busqueda(string dato)
     {
-        
         ViewBag.DatoBuscado = dato;
         ViewBag.Resultados = DB.Busqueda(dato);
         return View();
     }
 
+    public IActionResult Ayuda()
+    {
+        return View();
+    }
 
     public IActionResult Perfil(int id)
     {
