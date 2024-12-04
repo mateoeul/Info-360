@@ -70,13 +70,9 @@ public class HomeController : Controller
 
         int userId = DB.RegistroUsuario(usuario);
         ViewBag.IdUsuario = userId;
-
         Console.WriteLine(userId);
-
         estudiante.IdUsuario = userId;
-
         DB.RegistroEst(estudiante);
-
         HttpContext.Session.Remove("UsuarioTemp");
 
         return RedirectToAction("Login", "Auth");
@@ -88,6 +84,22 @@ public class HomeController : Controller
         DB.ActualizarInfoEst(estudiante, nombre, apellido, foto, fechaNac, carrera, cursada);
         return RedirectToAction("PerfilEst");
     }
+
+    [HttpGet]
+    public IActionResult ObtenerSugerencias(string dato)
+    {
+        if (string.IsNullOrWhiteSpace(dato))
+            return Json(new { universidades = new List<string>(), carreras = new List<string>() });
+
+        var resultados = DB.Busqueda(dato);
+
+        var universidades = resultados.Universidadesr.Select(u => u.Nombre).ToList();
+        var carreras = resultados.Carrerasr.Select(c => c.Nombre).ToList();
+
+        return Json(new { universidades, carreras });
+    }
+
+
     public IActionResult Busqueda(string dato)
     {
         ViewBag.DatoBuscado = dato;
@@ -123,12 +135,12 @@ public class HomeController : Controller
     }
     public IActionResult Test()
     {
-        var preguntas = DB.ObtenerPreguntasTest(); // Asume que hay 30 preguntas
+        var preguntas = DB.ObtenerPreguntasTest(); 
 
         // Dividir las preguntas en 3 partes (slides)
         ViewBag.PreguntasDivididas = preguntas
             .Select((pregunta, index) => new { Pregunta = pregunta, Index = index })
-            .GroupBy(x => x.Index / 10) // Divide en grupos de 10 preguntas
+            .GroupBy(x => x.Index / 10) 
             .Select(g => g.Select(x => x.Pregunta).ToList())
             .ToList();
 
@@ -139,27 +151,20 @@ public class HomeController : Controller
     {
         if (preguntasSeleccionadas == null || !preguntasSeleccionadas.Any())
         {
-            Console.WriteLine("No se recibieron preguntas seleccionadas.");
             ViewBag.MensajeError = "No seleccionaste ninguna opción. Por favor, intenta nuevamente.";
             return View();
         }
 
-        Console.WriteLine("IDs seleccionados: " + string.Join(", ", preguntasSeleccionadas));
-
-        // Diccionario para contar las ocurrencias de cada carrera
         Dictionary<int, int> contadorCarreras = new Dictionary<int, int>();
-
-        // Obtener todas las preguntas de la base de datos (esto podría ser optimizado si ya tienes los datos en memoria)
-        var preguntas = DB.ObtenerPreguntasTest(); // Asume que obtienes todas las preguntas
+        var preguntas = DB.ObtenerPreguntasTest(); 
 
         foreach (var idPregunta in preguntasSeleccionadas)
         {
-            // Buscar la pregunta por su ID
             var pregunta = preguntas.FirstOrDefault(p => p.Id == idPregunta);
 
             if (pregunta != null)
             {
-                int idCarrera = pregunta.IdCarrera;  // Obtener el ID de la carrera asociada a la pregunta
+                int idCarrera = pregunta.IdCarrera;  
 
                 if (contadorCarreras.ContainsKey(idCarrera))
                     contadorCarreras[idCarrera]++;
@@ -168,17 +173,14 @@ public class HomeController : Controller
             }
         }
 
-        Console.WriteLine("Contador de carreras: " + string.Join(", ", contadorCarreras.Select(kv => $"Carrera {kv.Key}: {kv.Value}")));
-
         // Buscar las carreras con mayor cantidad de selecciones
         int maxSeleccion = contadorCarreras.Values.Max();
         List<int> idsMax = contadorCarreras.Where(kv => kv.Value == maxSeleccion)
                                         .Select(kv => kv.Key)
                                         .ToList();
 
-        // Recuperar las carreras ganadoras
         ViewBag.CarrerasGanadoras = idsMax;
-        ViewBag.Carreras = DB.ObtenerCarreras(); // Obtiene todas las carreras de la DB
+        ViewBag.Carreras = DB.ObtenerCarreras(); 
 
         return View();
     }

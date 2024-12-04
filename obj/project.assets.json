@@ -505,19 +505,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mateo\\.nuget\\packages\\": {}
+    "C:\\Users\\48183956\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\Uni..csproj",
+      "projectUniqueName": "C:\\Users\\48183956\\Info-360\\Uni..csproj",
       "projectName": "Uni.",
-      "projectPath": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\Uni..csproj",
-      "packagesPath": "C:\\Users\\Mateo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\obj\\",
+      "projectPath": "C:\\Users\\48183956\\Info-360\\Uni..csproj",
+      "packagesPath": "C:\\Users\\48183956\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\48183956\\Info-360\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mateo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\48183956\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -574,7 +574,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

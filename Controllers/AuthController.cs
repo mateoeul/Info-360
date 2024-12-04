@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http; // Para HttpContext y Session
-using Uni_.Models; // Asegúrate de que tienes el namespace correcto para 'Usuarios' y tu lógica de base de datos
+using Microsoft.AspNetCore.Http; 
+using Uni_.Models; 
 using System.Linq;
 
 namespace Uni_.Controllers
@@ -48,15 +48,11 @@ namespace Uni_.Controllers
         }
     }
 
-
-        // Acción para cerrar sesión
         public IActionResult Logout()
         {
-            // Elimina los datos del usuario de la sesión
             HttpContext.Session.Remove("user");
             HttpContext.Session.Remove("userId");
 
-            // Redirige a la página de login
             return RedirectToAction("Login");
         }
     }

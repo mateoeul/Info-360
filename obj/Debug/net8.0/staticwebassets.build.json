@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YL/Wh53FxiVCVpuoJ+1ACHoH7IPvZfpOvRAmKP8ponk=",
+  "Hash": "mEZw+ph+DaljxWI7OCSLnh7/ek23JfYR9G/rIWsXevk=",
   "Source": "Uni.",
   "BasePath": "_content/Uni.",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Uni.\\wwwroot",
       "Source": "Uni.",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\css\\site.css",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\favicon.png",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\carrousel2.jpg",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\carrousel2.jpg",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/carrousel2.jpg",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\img\\carrousel2.jpg"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\comparar1.jpg",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\comparar1.jpg",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/comparar1.jpg",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\img\\comparar1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\comparar2.png",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\comparar2.png",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/comparar2.png",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\img\\comparar2.png"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\ditella.jfif",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\ditella.jfif",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/ditella.jfif",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\img\\ditella.jfif"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\estudio.jpg",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\estudio.jpg",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/estudio.jpg",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\img\\estudio.jpg"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\fondo-test.jpg",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\fondo-test.jpg",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/fondo-test.jpg",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\img\\fondo-test.jpg"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\gmail.png",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\gmail.png",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/gmail.png",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\img\\gmail.png"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\instagram.png",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\instagram.png",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/instagram.png",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\img\\instagram.png"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\ITBA.jpg",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\ITBA.jpg",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/ITBA.jpg",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\img\\ITBA.jpg"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\logo_uni_nav.png",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\logo_uni_nav.png",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/logo_uni_nav.png",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\img\\logo_uni_nav.png"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\logo_uni_nav2.png",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\logo_uni_nav2.png",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/logo_uni_nav2.png",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\img\\logo_uni_nav2.png"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\Logo_Uni.png",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\Logo_Uni.png",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/Logo_Uni.png",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Logo_Uni.png"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\logo_usuario.png",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\logo_usuario.png",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/logo_usuario.png",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\img\\logo_usuario.png"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\uba-derecho.jfif",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\uba-derecho.jfif",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/uba-derecho.jfif",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\img\\uba-derecho.jfif"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\uba-derecho.jpg",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\uba-derecho.jpg",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/uba-derecho.jpg",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\img\\uba-derecho.jpg"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\Uba.jpg",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\Uba.jpg",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/Uba.jpg",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Uba.jpg"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\UCA.jpg",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\UCA.jpg",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/UCA.jpg",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\img\\UCA.jpg"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\UP.jpg",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\UP.jpg",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/UP.jpg",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\img\\UP.jpg"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\UTN.jpg",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\UTN.jpg",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/UTN.jpg",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\img\\UTN.jpg"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\whatsapp.png",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\whatsapp.png",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/whatsapp.png",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\img\\whatsapp.png"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\img\\x.png",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\img\\x.png",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "img/x.png",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\img\\x.png"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\js\\agarre.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\js\\agarre.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "js/agarre.js",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\js\\agarre.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\js\\ayuda.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\js\\ayuda.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "js/ayuda.js",
       "AssetKind": "All",
@@ -492,10 +492,29 @@
       "OriginalItemSpec": "wwwroot\\js\\ayuda.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\js\\comparacion.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\js\\buscador.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
+      "BasePath": "_content/Uni.",
+      "RelativePath": "js/buscador.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\buscador.js"
+    },
+    {
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\js\\comparacion.js",
+      "SourceId": "Uni.",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "js/comparacion.js",
       "AssetKind": "All",
@@ -511,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\js\\comparacion.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\js\\confirmarContraseña.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\js\\confirmarContraseña.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "js/confirmarContraseña.js",
       "AssetKind": "All",
@@ -530,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\js\\confirmarContraseña.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\js\\ojitos.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\js\\ojitos.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "js/ojitos.js",
       "AssetKind": "All",
@@ -549,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\js\\ojitos.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\js\\perfil.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\js\\perfil.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "js/perfil.js",
       "AssetKind": "All",
@@ -568,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\js\\perfil.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\js\\site.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -587,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\js\\slides.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\js\\slides.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "js/slides.js",
       "AssetKind": "All",
@@ -606,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\js\\slides.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -625,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -644,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -663,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -682,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -701,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -720,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -739,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -758,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -777,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -796,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -815,10 +834,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\48183956\\Info-360\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Uni.",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Mateo\\Desktop\\Programacion\\Info-360\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\48183956\\Info-360\\wwwroot\\",
       "BasePath": "_content/Uni.",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",

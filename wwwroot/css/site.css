@@ -800,13 +800,12 @@ margin-top: 0;
   width: 18px;
   height: 18px;
   border: 1px solid #3C4B7A;
-  border-radius: 50%; /* Hace que el checkbox sea circular */
   outline: none;
   cursor: pointer;
 }
 
 .opcion input[type="checkbox"]:checked {
-  background-color: #3C4B7A;
+  background-color: white;
 }
 
 .opcion input[type="checkbox"]:checked::before {
@@ -816,7 +815,7 @@ margin-top: 0;
   left: 4px;
   width: 8px;
   height: 8px;
-  background-color: white;
+  background-color: #3C4B7A;
   border-radius: 50%; /* Círculo interior */
 }
 
@@ -1316,4 +1315,8 @@ margin-top: 0;
   color: #e53e3e;
   font-weight: bold;
   margin-top: 30px;
+}
+
+.resultados{
+  display: none;
 }
