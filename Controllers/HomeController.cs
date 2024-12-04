@@ -123,9 +123,18 @@ public class HomeController : Controller
     }
     public IActionResult Test()
     {
-        ViewBag.Preguntas = DB.ObtenerPreguntasTest();
+        var preguntas = DB.ObtenerPreguntasTest(); // Asume que hay 30 preguntas
+
+        // Dividir las preguntas en 3 partes (slides)
+        ViewBag.PreguntasDivididas = preguntas
+            .Select((pregunta, index) => new { Pregunta = pregunta, Index = index })
+            .GroupBy(x => x.Index / 10) // Divide en grupos de 10 preguntas
+            .Select(g => g.Select(x => x.Pregunta).ToList())
+            .ToList();
+
         return View();
     }
+
     public IActionResult ResultadoTest(List<int> preguntasSeleccionadas)
     {
         if (preguntasSeleccionadas == null || !preguntasSeleccionadas.Any())
@@ -138,23 +147,34 @@ public class HomeController : Controller
         Console.WriteLine("IDs seleccionados: " + string.Join(", ", preguntasSeleccionadas));
 
         // Diccionario para contar las ocurrencias de cada carrera
-        Dictionary<int, int> contador = new Dictionary<int, int>();
+        Dictionary<int, int> contadorCarreras = new Dictionary<int, int>();
 
-        foreach (var idCarrera in preguntasSeleccionadas)
+        // Obtener todas las preguntas de la base de datos (esto podría ser optimizado si ya tienes los datos en memoria)
+        var preguntas = DB.ObtenerPreguntasTest(); // Asume que obtienes todas las preguntas
+
+        foreach (var idPregunta in preguntasSeleccionadas)
         {
-            if (contador.ContainsKey(idCarrera))
-                contador[idCarrera]++;
-            else
-                contador[idCarrera] = 1;
+            // Buscar la pregunta por su ID
+            var pregunta = preguntas.FirstOrDefault(p => p.Id == idPregunta);
+
+            if (pregunta != null)
+            {
+                int idCarrera = pregunta.IdCarrera;  // Obtener el ID de la carrera asociada a la pregunta
+
+                if (contadorCarreras.ContainsKey(idCarrera))
+                    contadorCarreras[idCarrera]++;
+                else
+                    contadorCarreras[idCarrera] = 1;
+            }
         }
 
-        Console.WriteLine("Contador: " + string.Join(", ", contador.Select(kv => $"Carrera {kv.Key}: {kv.Value}")));
+        Console.WriteLine("Contador de carreras: " + string.Join(", ", contadorCarreras.Select(kv => $"Carrera {kv.Key}: {kv.Value}")));
 
         // Buscar las carreras con mayor cantidad de selecciones
-        int maxSeleccion = contador.Values.Max();
-        List<int> idsMax = contador.Where(kv => kv.Value == maxSeleccion)
-                                    .Select(kv => kv.Key)
-                                    .ToList();
+        int maxSeleccion = contadorCarreras.Values.Max();
+        List<int> idsMax = contadorCarreras.Where(kv => kv.Value == maxSeleccion)
+                                        .Select(kv => kv.Key)
+                                        .ToList();
 
         // Recuperar las carreras ganadoras
         ViewBag.CarrerasGanadoras = idsMax;
@@ -162,5 +182,6 @@ public class HomeController : Controller
 
         return View();
     }
+
 
 }

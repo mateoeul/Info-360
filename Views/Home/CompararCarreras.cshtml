@@ -4,23 +4,31 @@
 }
 <div class="busqueda">
     <h6>Comparar:</h6>
-    <h2>@ViewBag.carrera1.Nombre && @ViewBag.carrera2.Nombre</h2>
+    <h2>@carrera1.Nombre &amp; @carrera2.Nombre</h2>
     <hr>
 </div>
 
 <section class="comparacion">
     <div class="comparacion-contenedor">
-        <div class="carrera">
-            <img src="@carrera1.Foto" alt="@carrera1.Nombre" />
-            <h3>@carrera1.Nombre</h3>
-            <p>Duración: @carrera1.Duracion años</p>
-            <p>Costo: $@carrera1.Costo</p>
+        <!-- Carrera 1 -->
+        <div class="resultados-carreras">
+            <img class="foto-carreras" src="@carrera1.Foto" alt="Foto de la carrera @carrera1.Nombre"/>
+            <div class="info-carrera">
+                <h3>@carrera1.Nombre</h3>
+                <p class="detalles">Duración: <strong>@carrera1.Duracion años</strong></p>
+                <p class="detalles">Costo: <strong>$@carrera1.Costo</strong></p>
+            </div>
         </div>
-        <div class="carrera">
-            <img src="@carrera2.Foto" alt="@carrera2.Nombre" />
-            <h3>@carrera2.Nombre</h3>
-            <p>Duración: @carrera2.Duracion años</p>
-            <p>Costo: $@carrera2.Costo</p>
+
+
+        <!-- Carrera 2 -->
+        <div class="resultados-carreras">
+            <img class="foto-carreras" src="@carrera2.Foto" alt="Foto de la carrera @carrera2.Nombre"/>
+            <div class="info-carrera">
+                <h3>@carrera2.Nombre</h3>
+                <p class="detalles">Duración: <strong>@carrera2.Duracion años</strong></p>
+                <p class="detalles">Costo: <strong>$@carrera2.Costo</strong></p>
+            </div>
         </div>
     </div>
 </section>

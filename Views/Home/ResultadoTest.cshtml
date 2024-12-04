@@ -1,23 +1,29 @@
 <section class="resultado-test">
-    <h1>Resultados del Test Vocacional</h1>
+    <h1 class="titulo-resultado">Resultados del Test Vocacional</h1>
 
     @if (ViewBag.CarrerasGanadoras != null && ViewBag.CarrerasGanadoras.Count > 0)
     {
-        foreach (Carreras carrera in ViewBag.Carreras)
-        {
-            if (ViewBag.CarrerasGanadoras.Contains(carrera.Id))
+        <div class="carreras-container">
+            @foreach (Carreras carrera in ViewBag.Carreras)
             {
-                <div class="carrera-resultado">
-                    <h2>@carrera.Nombre</h2>
-                    <p>Duración: @carrera.Duracion años</p>
-                    <p>Costo: $@carrera.Costo</p>
-                    <img src="@carrera.Foto" alt="Imagen de @carrera.Nombre" />
-                </div>
+                if (ViewBag.CarrerasGanadoras.Contains(carrera.Id))
+                {
+                    <div class="carrera-resultado">
+                        <div class="carrera-imagen">
+                            <img src="@carrera.Foto" alt="Imagen de @carrera.Nombre" />
+                        </div>
+                        <div class="carrera-info">
+                            <h2>@carrera.Nombre</h2>
+                            <p class="descripcion">Duración: @carrera.Duracion años</p>
+                            <p class="descripcion">Costo: $@carrera.Costo</p>
+                        </div>
+                    </div>
+                }
             }
-        }
+        </div>
     }
     else
     {
-        <p>No se encontraron carreras para las selecciones realizadas.</p>
+        <p class="no-resultados">No se encontraron carreras para las selecciones realizadas.</p>
     }
 </section>

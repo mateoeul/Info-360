@@ -137,7 +137,7 @@ footer {
 
 }
 
-.vertical-line {
+.footer-container .vertical-line {
   border-left: 1px solid #ffffff; /* Línea vertical */
   height: 180px; /* Altura de la línea */
   margin-right:20px
@@ -284,13 +284,17 @@ footer pre{
 /*. . . . COMPARAR . . . .*/
 .comparar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 100vw;
 }
 .comparar img:first-child{
   object-fit: cover;
   width: 80%;
   height: 676px;
+}
+.comparacion img{
+  width: 400px;
+  height: 300;
 }
 
 /*. . . . TEST . . . .*/
@@ -603,7 +607,7 @@ footer pre{
 .perfil-usuario  .Info-personal h4 {
   font-size: 1.5em;
   color: #3C4B7A;
-  margin-bottom: 10%;
+  margin-bottom: 1%;
 }
 
 .perfil-usuario  .Info-personal h5 {
@@ -669,18 +673,19 @@ footer pre{
 .nombre-usuario{
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 0;
 }
 .cerrar-sesion{
   display: flex;
   color: red;
   justify-content: baseline;
-  margin-left: 200%;
+  margin-left: 100%;
   font-size: 1rem;
 }
 
 .cerrar-sesion a:visited{
   color: red;
-  font-style: none;
+
 }
 
 
@@ -732,23 +737,36 @@ margin-top: 0;
   width: 100%;
 }
 
-
-
-/* TTTTEEEEESSST*/
-.test-vocacional{
-  margin-top: 5%;
+/*..............................................................*/
+/*..............................................................*/
+/*..............................................................*/
+/* Contenedor principal del test vocacional */
+.form-test{
+  margin-top: 3%;
   margin-bottom: 3%;
 }
 
-.test {
-  width: 50%;
+.test-vocacional {
+
+  width: 60%;
   margin: auto;
-  border: 1px solid black;
   padding: 3%;
   border-radius: 20px;
-  text-align: center;
+  background-color: white;
+  border: 1px solid #ccc;
 }
 
+/* Contenedor del slide */
+#slidesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Asegura que los elementos se alineen hacia arriba */
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 2%; /* Separación del progreso y botones */
+}
+
+/* Estilo para los encabezados del test */
 .test-vocacional h2 {
   color: #5D88B3;
   font-size: 1.8em;
@@ -756,75 +774,28 @@ margin-top: 0;
   text-align: center;
 }
 
-
-.test .preguntas h3 {
+/* Estilo de las preguntas dentro de los slides */
+.preguntas h3 {
   color: #3C4B7A;
   font-size: 1.2em;
   margin-bottom: 1%;
   text-align: left;
   font-weight: bold;
+  width: 100%;
 }
 
-.test .opcion {
+/* Contenedor de cada opción de respuesta */
+.opcion {
   display: flex;
   align-items: center;
   margin: 1.5% 0;
   font-size: 1em;
 }
 
-.test .opcion input[type="checkbox"] {
+/* Estilo de los checkboxes */
+.opcion input[type="checkbox"] {
   margin-right: 10px;
-  transform: scale(1.3); /* Agranda el tamaño de los checkbox */
-}
-
-.test .boton-continuar {
-  border: none;
-  font-size: 1em;
-  cursor: pointer;
-  width: 20%;
-  margin-right: 60%;
-}
-
-.test .boton-continuar:hover {
-  background-color: #2f3e69;
-}
-
-.progreso{
-  margin-top: 5%;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.test .paginacion { 
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 20%;
-}
-
-.test .paginacion span {
-  width: 16px;
-  height: 16px;
-  background-color: #cfd8e3;
-  border-radius: 50%;
-  margin: 0 5px;
-}
-
-.test .paginacion .pagina-activa {
-  background-color: #3C4B7A;
-}
-
-.test .paginacion p {
-  position: absolute;
-  left: 54%;
-  top: 20%;
-  font-size: 0.9em;
-  color: #666;
-  margin-left: 10px;
-}
-
-.test .opcion input[type="checkbox"] {
+  transform: scale(1.3); /* Agranda el tamaño del checkbox */
   appearance: none; /* Elimina el estilo predeterminado del checkbox */
   width: 18px;
   height: 18px;
@@ -832,16 +803,13 @@ margin-top: 0;
   border-radius: 50%; /* Hace que el checkbox sea circular */
   outline: none;
   cursor: pointer;
-  margin-right: 10px;
-  display: inline-block;
-  position: relative;
 }
 
-.test .opcion input[type="checkbox"]:checked {
+.opcion input[type="checkbox"]:checked {
   background-color: #3C4B7A;
 }
 
-.test .opcion input[type="checkbox"]:checked::before {
+.opcion input[type="checkbox"]:checked::before {
   content: "";
   position: absolute;
   top: 4px;
@@ -849,7 +817,64 @@ margin-top: 0;
   width: 8px;
   height: 8px;
   background-color: white;
-  border-radius: 50%; /* El círculo interior cuando está marcado */
+  border-radius: 50%; /* Círculo interior */
+}
+
+/* Botones de navegación dentro de la caja */
+.progreso {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 2%; /* Separación con la última pregunta */
+}
+
+/* Estilo de los botones */
+.test-vocacional .button {
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  width: 48%; /* Hacer que los botones ocupen la mitad del ancho */
+  background-color: #3C4B7A;
+  color: white;
+}
+
+.button:hover {
+  background-color: #2f3e69;
+}
+
+.boton-atras {
+  background-color: #e0e0e0;
+}
+
+.boton-atras:hover {
+  background-color: #bbb;
+}
+
+/* Paginación: los círculos indicadores dentro de la caja */
+.paginacion {
+  display: flex;
+  justify-content: flex-start;
+  width: 48%; /* Paginación toma el otro 48% */
+}
+
+.paginacion span {
+  width: 16px;
+  height: 16px;
+  background-color: #cfd8e3;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.paginacion .pagina-activa {
+  background-color: #3C4B7A;
+}
+
+.paginacion p {
+  font-size: 0.9em;
+  color: #666;
+  margin-left: 10px;
 }
 
 /*-----------------------------------------------------------*/
@@ -1072,7 +1097,7 @@ margin-top: 0;
 /*----------------------  COMPARACION   --------------------*/
 .comparacion-contenedor {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: flex-start;
   gap: 20px;
   padding: 20px;
@@ -1109,6 +1134,7 @@ margin-top: 0;
 .ayuda{
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 4%;
 }
 .ayuda .busqueda {
   display: flex;
@@ -1125,6 +1151,9 @@ margin-top: 0;
 .ayuda .faq {
   width: 60%; 
   font-family: Arial, sans-serif;
+}
+.faq h4{
+  font-size: 1.2em;
 }
 
 .ayuda .faq h2 {
@@ -1181,15 +1210,15 @@ margin-top: 0;
 .ayuda .contacto {
   width: 35%; /* Ajusta el ancho de la sección de contacto */
   margin-top: 2%;
-  text-align: left;
+}
+
+.ayuda .contacto h4 {
+  font-size: 1em;
 }
 
 .ayuda .contacto h3 {
-  font-size: 18px;
-}
-
-.ayuda .contacto h2 {
-  font-size: 24px;
+  font-size: 1.3em;
+  margin-bottom: 0;
   color: #007bff;
 }
 
@@ -1197,7 +1226,7 @@ margin-top: 0;
   display: flex;
   gap: 10px;
   margin: 10px 0;
-  font-size: 18px;
+  font-size: 1em;
 }
 
 .ayuda .contacto-item i {
@@ -1210,8 +1239,81 @@ margin-top: 0;
   color: #0056b3; /* Azul oscuro */
 }
 
-/* General */
-hr {
-  border: 1px solid #ddd;
+
+
+/* RESULTADOS TEST*/
+
+/* Estilos para la sección de resultados */
+.resultado-test {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.titulo-resultado {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 30px;
+}
+
+/* Contenedor de las carreras */
+.carreras-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+/* Estilo para cada carrera */
+.carrera-resultado {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(230, 219, 219, 0.1);
+  overflow: hidden;
   width: 100%;
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.carrera-resultado:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo para la imagen de la carrera */
+.carrera-imagen img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Información de la carrera */
+.carrera-info {
+  padding: 15px;
+}
+
+.carrera-info h2 {
+  font-size: 1.5rem;
+  color: #2b6cb0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.descripcion {
+  font-size: 1rem;
+  color: #4a5568;
+  margin: 5px 0;
+}
+
+/* Mensaje cuando no hay resultados */
+.no-resultados {
+  font-size: 1.2rem;
+  color: #e53e3e;
+  font-weight: bold;
+  margin-top: 30px;
 }
