@@ -186,4 +186,10 @@ public class HomeController : Controller
     }
 
 
+    public IActionResult ListaCarreras()
+    {
+        return View();
+    }
+
+
 }
