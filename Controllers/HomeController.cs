@@ -188,6 +188,13 @@ public class HomeController : Controller
 
     public IActionResult ListaCarreras()
     {
+        ViewBag.Carreras = DB.ObtenerCarrerasDeCarrerasXUniversidad();
+        return View();
+    }
+
+    public IActionResult ListaUniversidadesConCarrera(int id)
+    {
+        ViewBag.Carreras = DB.ObtenerCarrerasDeCarrerasXUniversidad();
         return View();
     }
 

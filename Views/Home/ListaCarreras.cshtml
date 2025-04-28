@@ -2,6 +2,27 @@
     ViewData["Title"] = "Carreras";
 }
 
-<section class="lista-carreras">
+<section class="listadoCarreras">
+
+    <div class="titulo-listado">
+        <h1>ENCONTRÁ LA CARRERA DE TUS SUEÑOS</h1>
+    </div>
+
+    <div class="lista-carreras">
+        @foreach (var carrera in ViewBag.Carreras)
+        {   
+            <a href='@Url.Action("Home", "ListaUniversidadesConCarrera)'>
+                <div class="resultados-carreras">
+                    <img class="foto-carreras" src="@carrera.Foto" alt="Foto de la carrera @carrera.Nombre"/>
+                    <div class="info-carrera">
+                        <h3>@carrera.Nombre</h3>
+                        <p class="">@carrera.Descripcion</p>
+                    </div>
+                </div>
+            </a>
+
+        }
+    </div>
+
 
 </section>

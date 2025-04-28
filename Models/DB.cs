@@ -225,72 +225,27 @@ public class DB
         }
         return usuario;
     }
-    /*
-    public static ResultadoBusqueda Busqueda(string datoIng, Busqueda pbusqueda) 
-    {
-        ResultadoBusqueda resultados = new ResultadoBusqueda();
-        resultados = null;
-        if(pbusqueda.Valoraciones == null)
-        pbusqueda.Valoraciones = 0;
-        if(pbusqueda.PrecioMax == null)
-        pbusqueda.PrecioMax = int.MaxValue;
-        if(pbusqueda.PrecioMin == null)
-        pbusqueda.PrecioMin = 0;
-        
-        if(pbusqueda.Tipo == 't') //busca carreras y universidades de todo tipo
-        {
-            using(SqlConnection db = new SqlConnection(_connectionString))
-            {
-                string sql = "SELECT * FROM Universidades WHERE Nombre LIKE @pDatoIng%";
-                resultados.Universidadesr = db.Query<Universidades>(sql, new{pDatoIng = datoIng}).ToList();
-            }        
-            using(SqlConnection db = new SqlConnection(_connectionString))
-            {
-                string sql = "SELECT * FROM Carreras WHERE Nombre LIKE @pDatoIng%";
-                resultados.Carrerasr = db.Query<Carreras>(sql, new{pDatoIng = datoIng}).ToList();
-            }          
-            if (resultados.Carrerasr.Count == 0 && resultados.Universidadesr.Count == 0)
-            return null;
-            else 
-            return resultados;
-        }
-        
-        else if(pbusqueda.Tipo == 'c') //busca carreras
-        {
-            using(SqlConnection db = new SqlConnection(_connectionString))
-            {
-                string sql = "SELECT Id FROM Carreras WHERE Nombre LIKE @pDatoIng% AND Valoraciones >= @pvaloraciones AND Costo >= @pmin AND Costo <= @pmax";
-                resultados.Carrerasr = db.Query<Carreras>(sql, new{pmin = pbusqueda.PrecioMin, pmax = pbusqueda.PrecioMax, pvaloraciones = pbusqueda.Valoraciones}).ToList();
-            }
-        }
-        else if (pbusqueda.Tipo == 'u' && pbusqueda.TipoUni == null ) //busca universidades de todo tipo
-        {
-            using(SqlConnection db = new SqlConnection(_connectionString))
-            {
-                string sql = "SELECT Id FROM Universidades WHERE Nombre LIKE @pDatoIng% AND Valoraciones >= @pvaloraciones";
-                resultados.Universidadesr = db.Query<Universidades>(sql, new{pDatoIng = datoIng, pvaloraciones = pbusqueda.Valoraciones}).ToList();
-            }
-            if (resultados.Universidadesr.Count == 0)
-            return null;
-            else 
-            return resultados;
-        }
-        else if(pbusqueda.Tipo == 'u' && pbusqueda.TipoUni != null) //busca universidades de un tipo (publica o privada)
-        {   
-            using(SqlConnection db = new SqlConnection(_connectionString))
-            {
-                string sql = "SELECT Id FROM Universidades WHERE Nombre LIKE @pDatoIng% AND Tipo = @ptipo AND Valoraciones >= @pvaloraciones";
-                resultados.Universidadesr = db.Query<Universidades>(sql, new{pDatoIng = datoIng, ptipo = pbusqueda.Tipo, pvaloraciones = pbusqueda.Valoraciones}).ToList();
-            }
-            if (resultados.Universidadesr.Count == 0)
-            return null;
-            else 
-            return resultados;
-        }
-        return resultados;
-    }
 
-*/
+    public static List<Carreras> ObtenerCarrerasDeCarrerasXUniversidad()
+    {
+        List<Carreras> carreras = new List<Carreras>();
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Carreras WHERE Id IN (SELECT idCarrera FROM CarrerasXUniversidad)";
+            carreras = db.Query<Carreras>(sql).ToList();
+        }
+        return carreras;
+    }
+    public List<Universidades>  ObtenerUniversidadesConCarrera(int id)
+    {
+        List<Universidades> universidades = new List<Universidades>();
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Universidades WHERE Id IN (SELECT idUniversidad FROM CarrerasXUniversidad WHERE idCarrera = @pId))";
+            universidades = db.Query<Carreras>(sql).ToList();
+        }
+        return universidades;
+    }
 
 }
 
