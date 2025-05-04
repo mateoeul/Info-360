@@ -11,7 +11,7 @@
     <div class="lista-carreras">
         @foreach (var carrera in ViewBag.Carreras)
         {   
-            <a href='@Url.Action("Home", "ListaUniversidadesConCarrera)'>
+            <a href='@Url.Action("ListaUniversidadesConCarrera" ,"Home", new { id = carrera.Id, nombre = carrera.Nombre })'>
                 <div class="resultados-carreras">
                     <img class="foto-carreras" src="@carrera.Foto" alt="Foto de la carrera @carrera.Nombre"/>
                     <div class="info-carrera">

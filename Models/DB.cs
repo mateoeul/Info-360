@@ -3,8 +3,8 @@ using Dapper;
 
 public class DB
 {
-    private static string _connectionString = @"Server=localhost;DataBase=Uni;Trusted_Connection=True;";
-    //private static string _connectionString =  @"Server=BANGHODEMATEO\SQLEXPRESS;DataBase=Uni;Trusted_Connection=True;";
+    //private static string _connectionString = @"Server=localhost;DataBase=Uni;Trusted_Connection=True;";
+    private static string _connectionString =  @"Server=BANGHODEMATEO;DataBase=Uni;Trusted_Connection=True;";
 
     /*public static void RegistroUni(Universidades universidad)
     {
@@ -236,13 +236,13 @@ public class DB
         }
         return carreras;
     }
-    public List<Universidades>  ObtenerUniversidadesConCarrera(int id)
+    public static List<Universidades>  ObtenerUniversidadesConCarrera(int id)
     {
         List<Universidades> universidades = new List<Universidades>();
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Universidades WHERE Id IN (SELECT idUniversidad FROM CarrerasXUniversidad WHERE idCarrera = @pId))";
-            universidades = db.Query<Carreras>(sql).ToList();
+            string sql = "SELECT * FROM Universidades WHERE Id IN (SELECT idUniversidad FROM CarrerasXUniversidad WHERE idCarrera = @pId)";
+            universidades = db.Query<Universidades>(sql, new{pId = id}).ToList();
         }
         return universidades;
     }

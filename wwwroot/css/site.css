@@ -350,7 +350,7 @@ footer pre{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 7%;
+    margin-top: 4vh;
     margin-bottom: 8%;
     box-shadow: 5px 5;
 }
@@ -359,7 +359,7 @@ footer pre{
 .login-box {
   box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2  );
     width: 28%;
-    padding: 40px;
+    padding: 2%;
     border: 1px solid #D4D9E2;
     border-radius: 15px;
     text-align: center;
@@ -459,7 +459,7 @@ footer pre{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 7%;
+  margin-top: 8vh;
   margin-bottom: 8%;
   height: auto;
 }
@@ -947,14 +947,14 @@ margin-top: 0;
   justify-content: first baseline;
 }
 
-.busqueda .foto-facultades{
+.foto-facultades{
   width: 100px;
   height: 100px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Ajusta los valores según tu preferencia */
 
 }
 
-.busqueda .resultados-universidades{
+.resultados-universidades{
   display: flex;
   justify-content: baseline;
   width: 25%;
@@ -965,6 +965,8 @@ margin-top: 0;
 }
 .perfil-universidad h6{
   font-weight: bold;
+  color: #000000;
+  text-decoration: none;
 }
 .perfil-universidad h6{
   margin-top: 3%;
@@ -1329,7 +1331,7 @@ margin-top: 0;
 /* - -          LISTA CARRERAS            - -*/
 /* - - - -*/
 
-.listadoCarreras .lista-carreras {
+.lista-carreras {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
   justify-items: center; /* Centra cada item dentro de su celda */
@@ -1361,4 +1363,52 @@ margin-top: 0;
 }
 .lista-carreras img{
   width: 400px;
+}
+
+.listadoUniversidades{
+  display: flex;
+  flex-direction: column;
+}
+
+.listadoUniversidades .lista-carreras{
+  gap: 0;
+}
+.listadoUniversidades .resultados-universidades img{
+  max-width: fit-content;
+  max-height: fit-content;
+}
+.listadoUniversidades .resultados-universidades{
+  width: 100%;
+}
+.listadoUniversidades hr{
+  margin-bottom: 3%;
+}
+
+
+.listadoUniversidades .lista-carreras {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  justify-items: center; /* Centra cada item dentro de su celda */
+  width: 100%; /* Asegura que no sobresalga */
+  max-width: 90%; /* Limita el ancho */
+  gap: 4%;
+  margin: 0 auto; /* Centra en la página */
+}
+
+
+
+.listadoUniversidades .resultados-universidades img {
+  width: 100%;
+  max-width: 130px; /* Aumenta el tamaño máximo de las imágenes */
+  height: auto; /* Mantiene la proporción */
+  margin-bottom: 40%;
+}
+
+.listadoUniversidades .perfil-universidad h6 {
+  font-size: 1.4em; /* Hace que los nombres de las universidades sean más grandes */
+  font-weight: bold;
+}
+
+.listadoUniversidades .perfil-universidad p {
+  font-size: 1.2em; /* Aumenta el tamaño del texto descriptivo */
 }
