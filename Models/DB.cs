@@ -113,7 +113,7 @@ public class DB
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Universidades WHERE Id = @pId";
-            universidad = db.QueryFirstOrDefault<Universidades>(sql, new{pId = universidad.Id});
+            universidad = db.QueryFirstOrDefault<Universidades>(sql, new{pId = pId});
         }
         return universidad;
     }
@@ -247,5 +247,15 @@ public class DB
         return universidades;
     }
 
+    public static CarreraXUniversidad ObtenerCarreraXUniversidad(int idCarrera, int idUniversidad)
+    {
+        CarreraXUniversidad carrera = null;
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM CarrerasXUniversidad WHERE idCarrera = @pidCarrera AND idUniversidad = @pidUniversidad";
+            carrera = db.QueryFirstOrDefault<CarreraXUniversidad>(sql, new{pidCarrera = idCarrera, pidUniversidad = idUniversidad});
+        }
+        return carrera;
+    }
 }
 

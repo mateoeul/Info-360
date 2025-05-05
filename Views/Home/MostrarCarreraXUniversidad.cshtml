@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = ViewBag.Carrera.Nombre + " en " + ViewBag.Universidad.Nombre;
+}
+
+<section class="detalle-carrera">
+    <div class="busqueda">
+        <h2>@ViewBag.Carrera.Nombre > @ViewBag.Universidad.Nombre</h2>
+        <hr>
+
+
+        <div class="contenido-carrera">
+            <div class="info-general">
+                <img class="foto-facultades" src="@ViewBag.Universidad.Foto" alt="Foto de @ViewBag.Universidad.Nombre">
+                <div class="texto-info">
+                    <h2>Detalles de la Carrera</h2>
+                    <p><strong>Duración:</strong> @ViewBag.CarreraXUniversidad.Duracion años</p>
+                    <p><strong>Costo:</strong> $@ViewBag.CarreraXUniversidad.Costo</p>
+                    <p><strong>Orientación:</strong> @ViewBag.CarreraXUniversidad.Orientacion</p>
+                    <p><strong>Descripción:</strong> @ViewBag.CarreraXUniversidad.Descripcion</p>
+                    <p><strong>Información adicional:</strong> @ViewBag.CarreraXUniversidad.InfoAdicional</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

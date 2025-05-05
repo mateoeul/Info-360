@@ -192,10 +192,18 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult ListaUniversidadesConCarrera(int id, string nombre)
+    public IActionResult ListaUniversidadesConCarrera(int idCarrera)
     {
-        ViewBag.Universidades = DB.ObtenerUniversidadesConCarrera(id);
-        ViewBag.Carrera = nombre;
+        ViewBag.Universidades = DB.ObtenerUniversidadesConCarrera(idCarrera);
+        ViewBag.Carrera = DB.MostrarInfoCarrera(idCarrera);
+        return View();
+    }
+
+    public IActionResult MostrarCarreraXUniversidad(int idCarrera, int idUniversidad)
+    {
+        ViewBag.Carrera = DB.MostrarInfoCarrera(idCarrera);
+        ViewBag.Universidad = DB.MostrarInfoUni(idUniversidad);
+        ViewBag.CarreraXUniversidad = DB.ObtenerCarreraXUniversidad(idCarrera, idUniversidad);
         return View();
     }
 
