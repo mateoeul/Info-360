@@ -227,8 +227,13 @@ footer pre{
 }
 
 /*    . . . . UNIVERSIDADES INDEX . . . . .*/
+.index .foto-facultades{
+  width: 250px;
+  height: auto;
+}
+
 .universidades-index {
-  background-color: #F8FFFF;
+  background-color: #f3eee6;
   color: #5D88B3;
   padding-top: 6%;
   padding-bottom: 6%;
@@ -282,19 +287,38 @@ footer pre{
 }
 
 /*. . . . COMPARAR . . . .*/
+.contenedor-comparacion{
+  background-color: #f3eee6;
+  padding-bottom: 4%;
+}
 .comparar {
   display: flex;
-  justify-content: space-between;
-  width: 100vw;
+  margin: 0 auto;
+  width: 80vw;
+  color: #3C4B7A;
 }
 .comparar img:first-child{
   object-fit: cover;
   width: 80%;
-  height: 676px;
+  height: 670px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
-.comparacion img{
-  width: 400px;
-  height: 300;
+.comparar div{
+  padding: 3%;
+  background-color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.texto-comparar h1{
+  margin-top: 4%;
+   font-size: 9vi;
+   font-weight:500;
+}
+
+.texto-comparar h3{
+  line-height: 1.6;
+  font-size: 2vi;
 }
 
 /*. . . . TEST . . . .*/
@@ -350,7 +374,7 @@ footer pre{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 4vh;
+    margin-top: 10vh;
     margin-bottom: 8%;
     box-shadow: 5px 5;
 }
@@ -459,7 +483,7 @@ footer pre{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8vh;
+  margin-top: 12vh;
   margin-bottom: 8%;
   height: auto;
 }
@@ -1384,7 +1408,6 @@ margin-top: 0;
   margin-bottom: 3%;
 }
 
-
 .listadoUniversidades .lista-carreras {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
@@ -1393,6 +1416,7 @@ margin-top: 0;
   max-width: 90%; /* Limita el ancho */
   gap: 4%;
   margin: 0 auto; /* Centra en la página */
+  margin-bottom: 11%;
 }
 
 .listadoUniversidades .resultados-universidades img {
@@ -1425,6 +1449,10 @@ margin-top: 0;
 .texto-info{
   margin-left: 4%;
   width: 70%;
+}
+
+.detalle-carrera{
+  margin-bottom: 8%;
 }
 
 .contenido-carrera{
